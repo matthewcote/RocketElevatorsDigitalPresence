@@ -32,9 +32,6 @@
 	</head>
     
 	<!--
-        -- added, Matthew Cote - for searchable notes inside this template. Where this appears I have modified the original comments to add requirement notes
-        and my own comments for code alterations
-
 		AVAILABLE BODY CLASSES:
 		
 		smoothscroll 			= create a browser smooth scroll
@@ -57,7 +54,7 @@
 	-->
 	<body class="smoothscroll enable-animation">
 
-		<!-- SLIDE TOP // commented out for now Matthew Cote
+		<!-- SLIDE TOP // -->
 		<div id="slidetop">
 
 			<div class="container">
@@ -65,27 +62,23 @@
 				<div class="row">
 
 					<div class="col-md-4">
-						<h6><i class="icon-heart"></i> something</h6>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. </p>
+						<h6><i class="icon-heart"></i>Rocket Elevators</h6>
+						<p>Elevate some stuff, which is to say you can move stuff in the opposite direction of the gravity force vector!</p>
 					</div>
 
 					<div class="col-md-4">
-						<h6><i class="fa-facheck"></i> RECENTLY VISITED</h6>
-						<ul class="list-unstyled">
-							<li><a href="#"><i class="fa fa-angle-right"></i> Consectetur adipiscing elit amet</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> This is a very long text, very very very very very very very very very very very very </a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> Dolor sit amet,consectetur adipiscing elit amet</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> Consectetur adipiscing elit amet,consectetur adipiscing elit</a></li>
-						</ul>
+						<h6><i class="fa-facheck"></i>Elevation Elevated!</h6>
+						<p>
+								Every customer, every building and every elevator installation is unique, our expert technicians will take the time to speak to you and examine the project to accurately scope, design and plan to deliver the best possible results. We'll ensure that the transition from design and planning to installation of a final product is seamless.
+						</p>
 					</div>
 
 					<div class="col-md-4">
 						<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
 						<ul class="list-unstyled">
-							<li><b>Address:</b> PO Box 21132, Here Weare St, <br /> Melbourne, Vivas 2355 Australia</li>
-							<li><b>Phone:</b> 1-800-565-2390</li>
-							<li><b>Email:</b> <a href="mailto:support@yourname.com">support@yourname.com</a></li>
+							<li><b>Address:</b> Address: 725 boulevard Lebourgneuf <br /> Québec, G2J 0C4</li>
+							<li><b>Phone:</b> 581-701-0303</li>
+							<li><b>Email:</b> <a href="mailto:mattcote1980@gmail.com">info@rocketelevators.com</a></li>
 						</ul>
 					</div>
 
@@ -496,6 +489,10 @@
             <!-- Services -->
 			<section id="services">
 				<div class="container">
+					
+					<div class="heading-title heading-dotted text-center">
+						<h2>Services</h2>
+					</div>
 
 					<div class="row">
 						<div class="col-sm-4">
@@ -578,31 +575,35 @@
                         These prizes and projects are fictitious and must be invented by the developer. They must reflect a diversity among the residential, 
                         corporate, project names, prizes, etc. Their visuals are not provided and must be imagined by the developers.
 
-            
-            -->
+         < WORK /PORTFOLIO added, Matthew Cote ---
+                        § A section of the Home Page must be positioned under the Portfolio and present the CEO of the company and the employee of the month. 
+                        The CEO of Rocket Elevators is one of the coaches introduced as supervisor of the cohort. The selected coach will therefore provide 
+                        the participant with a photo that can be inserted into the carousel. The employee of the month is the participant himself, so she or 
+                        he will have to provide a photo that will be inserted into his carousel.-->
 			<section id="portfolio">
 				<div class="container">
 
-					<div class="heading-title heading-dotted text-center">
-						<h2>Portfolio</h2>
-					</div>
+					<header class="text-center mb-60">
+						<h2>Our Work</h2>
+						<p class="lead font-lato">Lorem ipsum dolor sit amet adipiscium elit</p>
+						<hr />
+					</header>
 
-					<div class="text-center">
+
+					<!-- PORTFOLIO -->
+					<div id="portfolio" class="portfolio-nogutter">
+
 						<ul class="nav nav-pills mix-filter mb-60">
 							<li data-filter="all" class="filter active"><a href="#">All</a></li>
 							<li data-filter="development" class="filter"><a href="#">Development</a></li>
 							<li data-filter="photography" class="filter"><a href="#">Photography</a></li>
 							<li data-filter="design" class="filter"><a href="#">Design</a></li>
 						</ul>
-					</div>
 
-				</div>
-
-				<div id="portfolio" class="portfolio-nogutter">
 
 						<div class="row mix-grid">
 
-							<div class="col-md-3 col-sm-3 mix design"><!-- item 1-->
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
 
 								<div class="item-box">
 									<figure>
@@ -611,19 +612,181 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="demo_files/images/thematics/construction/w1-min.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/8-min.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 
 												<!-- details -->
-												<a class="ico-rounded lightbox" href="ajax/portfolio-detail-modal-6.html" data-plugin-options='{"type":"ajax", "closeOnBgClick":false}'>
+												<a class="ico-rounded" href="portfolio-single-slider.html">
 													<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
 												</a>
 
 											</span>
 										</span>
 
-										<img class="img-fluid" src="demo_files/images/thematics/construction/w1-min.jpg" width="600" height="399" alt="">
+										<!-- carousel -->
+										<div class="owl-carousel buttons-autohide controlls-over m-0" data-plugin-options='{"singleItem": true, "autoPlay": 4000, "navigation": false, "pagination": true, "transitionStyle":"goDown"}'>
+											<div>
+												<img class="img-fluid" src="demo_files/images/mockups/600x399/8-min.jpg" width="600" height="399" alt="">
+											</div>
+											<div>
+												<img class="img-fluid" src="demo_files/images/mockups/600x399/9-min.jpg" width="600" height="399" alt="">
+											</div>
+											<div>
+												<img class="img-fluid" src="demo_files/images/mockups/600x399/10-min.jpg" width="600" height="399" alt="">
+											</div>
+										</div>
+										<!-- /carousel -->
+
+
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Street Photography</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Photography</a></li>
+											<li><a href="#">Design</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix development"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/9-min.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+
+												<!-- details -->
+												<a class="ico-rounded" href="portfolio-single-slider.html">
+													<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
+												</a>
+
+											</span>
+										</span>
+
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/9-min.jpg" width="600" height="399" alt="">
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Nature Photography</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Photography</a></li>
+											<li><a href="#">Design</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix photography"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/10-min.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+
+												<!-- details -->
+												<a class="ico-rounded" href="portfolio-single-slider.html">
+													<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
+												</a>
+
+											</span>
+										</span>
+
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/10-min.jpg" width="600" height="399" alt="">
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Fashion Design</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Photography</a></li>
+											<li><a href="#">Design</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/11-min.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+
+												<!-- details -->
+												<a class="ico-rounded" href="portfolio-single-slider.html">
+													<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
+												</a>
+
+											</span>
+										</span>
+
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/11-min.jpg" width="600" height="399" alt="">
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Ocean Project</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Photography</a></li>
+											<li><a href="#">Design</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/12-min.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+
+												<!-- details -->
+												<a class="ico-rounded" href="portfolio-single-slider.html">
+													<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
+												</a>
+
+											</span>
+										</span>
+
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/12-min.jpg" width="600" height="399" alt="">
 									</figure>
 
 									<div class="item-box-desc">
@@ -639,7 +802,7 @@
 							</div><!-- /item -->
 
 
-							<div class="col-md-3 col-sm-3 mix development"><!-- item 2-->
+							<div class="col-md-3 col-sm-3 mix development"><!-- item -->
 
 								<div class="item-box">
 									<figure>
@@ -648,19 +811,19 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="demo_files/images/thematics/construction/w2-min.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/13-min.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 
 												<!-- details -->
-												<a class="ico-rounded lightbox" href="ajax/portfolio-detail-modal-6.html" data-plugin-options='{"type":"ajax", "closeOnBgClick":false}'>
+												<a class="ico-rounded" href="portfolio-single-slider.html">
 													<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
 												</a>
 
 											</span>
 										</span>
 
-										<img class="img-fluid" src="demo_files/images/thematics/construction/w2-min.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/13-min.jpg" width="600" height="399" alt="">
 									</figure>
 
 									<div class="item-box-desc">
@@ -676,7 +839,7 @@
 							</div><!-- /item -->
 
 
-							<div class="col-md-3 col-sm-3 mix photography"><!-- item 3-->
+							<div class="col-md-3 col-sm-3 mix photography"><!-- item -->
 
 								<div class="item-box">
 									<figure>
@@ -685,19 +848,19 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="demo_files/images/thematics/construction/w3-min.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/14-min.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 
 												<!-- details -->
-												<a class="ico-rounded lightbox" href="ajax/portfolio-detail-modal-4.html" data-plugin-options='{"type":"ajax", "closeOnBgClick":false}'>
+												<a class="ico-rounded" href="portfolio-single-slider.html">
 													<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
 												</a>
 
 											</span>
 										</span>
 
-										<img class="img-fluid" src="demo_files/images/thematics/construction/w3-min.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/14-min.jpg" width="600" height="399" alt="">
 									</figure>
 
 									<div class="item-box-desc">
@@ -713,7 +876,7 @@
 							</div><!-- /item -->
 
 
-							<div class="col-md-3 col-sm-3 mix design"><!-- item 4-->
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
 
 								<div class="item-box">
 									<figure>
@@ -722,7 +885,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="demo_files/images/thematics/construction/w4-min.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/15-min.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 
@@ -734,7 +897,7 @@
 											</span>
 										</span>
 
-										<img class="img-fluid" src="demo_files/images/thematics/construction/w4-min.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/15-min.jpg" width="600" height="399" alt="">
 									</figure>
 
 									<div class="item-box-desc">
@@ -750,7 +913,7 @@
 							</div><!-- /item -->
 
 
-							<div class="col-md-3 col-sm-3 mix design"><!-- item 5-->
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
 
 								<div class="item-box">
 									<figure>
@@ -759,7 +922,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="demo_files/images/thematics/construction/w5-min.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/16-min.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 
@@ -771,7 +934,7 @@
 											</span>
 										</span>
 
-										<img class="img-fluid" src="demo_files/images/thematics/construction/w5-min.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/16-min.jpg" width="600" height="399" alt="">
 									</figure>
 
 									<div class="item-box-desc">
@@ -787,7 +950,7 @@
 							</div><!-- /item -->
 
 
-							<div class="col-md-3 col-sm-3 mix photography"><!-- item 6-->
+							<div class="col-md-3 col-sm-3 mix photography"><!-- item -->
 
 								<div class="item-box">
 									<figure>
@@ -796,7 +959,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="demo_files/images/thematics/construction/w6-min.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/1-min.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 
@@ -808,7 +971,7 @@
 											</span>
 										</span>
 
-										<img class="img-fluid" src="demo_files/images/thematics/construction/w6-min.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/1-min.jpg" width="600" height="399" alt="">
 									</figure>
 
 									<div class="item-box-desc">
@@ -824,7 +987,7 @@
 							</div><!-- /item -->
 
 
-							<div class="col-md-3 col-sm-3 mix design"><!-- item 7-->
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
 
 								<div class="item-box">
 									<figure>
@@ -833,7 +996,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="demo_files/images/thematics/construction/w7-min.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/2-min.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 
@@ -845,7 +1008,7 @@
 											</span>
 										</span>
 
-										<img class="img-fluid" src="demo_files/images/thematics/construction/w7-min.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/2-min.jpg" width="600" height="399" alt="">
 									</figure>
 
 									<div class="item-box-desc">
@@ -861,7 +1024,7 @@
 							</div><!-- /item -->
 
 
-							<div class="col-md-3 col-sm-3 mix design"><!-- item 8-->
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
 
 								<div class="item-box">
 									<figure>
@@ -870,7 +1033,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="demo_files/images/thematics/construction/w8-min.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/3-min.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 
@@ -882,7 +1045,7 @@
 											</span>
 										</span>
 
-										<img class="img-fluid" src="demo_files/images/thematics/construction/w8-min.jpg" width="600" height="399" alt="">
+										<img class="img-fluid" src="demo_files/images/mockups/600x399/3-min.jpg" width="600" height="399" alt="">
 									</figure>
 
 									<div class="item-box-desc">
@@ -900,18 +1063,28 @@
 
 						</div>
 
+					</div>
+					<!-- /PORTFOLIO -->
+
+					<!-- CONTACT US -->
+					<div class="callout alert alert-transparent b-0 mt-60 mb-60">
+
+						<div class="text-center">
+
+							<h3>Call now at <strong>+800-565-2390</strong> and get 15% discount!</h3>
+							<p class="font-lato fs-20">
+								We truly care about our users and our product.
+							</p>
+							
+							<a href="#contact" class="scrollTo btn btn-default btn-lg mt-30">CONTACT US</a>
+
+						</div>
+
+					</div>
+					<!-- /CONTACT US -->
 
 				</div>
 			</section>
-            <!-- /PORTFOLIO added, Matthew Cote ---
-                        § A section of the Home Page must be positioned under the Portfolio and present the CEO of the company and the employee of the month. 
-                        The CEO of Rocket Elevators is one of the coaches introduced as supervisor of the cohort. The selected coach will therefore provide 
-                        the participant with a photo that can be inserted into the carousel. The employee of the month is the participant himself, so she or 
-                        he will have to provide a photo that will be inserted into his carousel.
-            -->
-
-
-
 
 			<!-- Testimonials -->
 			<section class="section-xs dark">
@@ -947,10 +1120,6 @@
 				</div>
 			</section>
 			<!-- /Testimonials -->
-
-
-
-
 
             <!-- News added, Matthew Cote ---
                     § Under the Home Page staff section, there will be a “News” section and Press Releases will be showcased below. 
@@ -1150,8 +1319,6 @@
             -->
 
 
-
-
 			<!-- Overview -->
 			<section id="overview">
 				<div class="container text-center">
@@ -1184,9 +1351,6 @@
 				</div>
 			</section>
 			<!-- /Overview -->
-
-
-
 
 
             <!-- Clients added, Matthew Cote ---
@@ -1248,9 +1412,6 @@
 			</section>
 			<!-- /Clients -->
 
-
-
-
 			<!-- CONTACT 
 				-- added, Matthew Cote
 				§ The "Contact Us" form is the last section set up on the Home Page before the Footer. It offers two sections, 
@@ -1271,7 +1432,8 @@
 
 					<header class="text-center mb-60">
 						<h2>Contact Us</h2>
-						<p class="lead font-lato">Lorem ipsum dolor sit amet adipiscium elit</p>
+						<p class="lead font-lato">Elevate your project with Rocket Elevators
+						</p>
 						<hr />
 					</header>
 
@@ -1282,8 +1444,6 @@
 						<div class="col-md-8 col-sm-8">
 
 							<h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
-
-							
 							<!--
 								MESSAGES
 								
@@ -1437,9 +1597,7 @@
 
 						</div>
 						<!-- /INFO -->
-
 					</div>
-
 				</div>
 			</section>
 			<!-- /CONTACT -->
@@ -1452,8 +1610,6 @@
             -->
 			<footer id="footer">
 				<div class="container">
-
-
 					<div class="row">
 
 						<!-- col #1 -->
