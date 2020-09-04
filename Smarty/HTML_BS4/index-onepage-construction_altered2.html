@@ -54,7 +54,7 @@
 	-->
 	<body class="smoothscroll enable-animation">
 
-		<!-- SLIDE TOP // -->
+		<!-- SLIDE TOP // OPTIONAL - done for now -->
 		<div id="slidetop">
 
 			<div class="container">
@@ -91,12 +91,9 @@
 		</div>
 		<!-- /SLIDE TOP -->
 
-
 		<!-- wrapper -->
 		<div id="wrapper">
-
-			<!-- 
-				AVAILABLE HEADER CLASSES
+		<!-- AVAILABLE HEADER CLASSES
 
 				Default nav height: 96px
 				.header-md 		= 70px nav height
@@ -121,6 +118,15 @@
 
 				Example Usage:  class="clearfix sticky header-sm transparent b-0"
 			-->
+			
+			<!-- SLIDER SECTION 
+            -- added, Matthew Cote - requirements notes ---
+            § The Slider of the Home Page, which must contain 3 panels and each panel must be displayed 7 seconds before moving on to the next. The rotation must also be continuous.
+			□ Slide 1: Slogan - Link to the offer of services and Link to the quote request form
+			□ Slide 2: Promotion of residential building service and link to residential service detail page
+			□ Slide 3: Promotion of corporate building service and link to corporate service detail page
+            -->
+			<div>
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 
                 <!-- TOP NAV -- added, Matthew Cote 
@@ -221,18 +227,8 @@
 
 			
 			
-			</div> <!-- Matthew Cote HEADER - NavBar, finished for now, ask for feedback -->
-
-
-
-            <!-- REVOLUTION SLIDER 
-            -- added, Matthew Cote - requirements notes ---
-            § The Slider of the Home Page, which must contain 3 panels and each panel must be displayed 7 seconds before moving on to the next. The rotation must also be continuous.
-			□ Slide 1: Slogan - Link to the offer of services and Link to the quote request form
-			□ Slide 2: Promotion of residential building service and link to residential service detail page
-			□ Slide 3: Promotion of corporate building service and link to corporate service detail page
-
-            -->
+			</div> 
+            
 			<div class="slider fullwidthbanner-container roundedcorners">
 				<!--
 					Navigation Styles:
@@ -477,16 +473,10 @@
 
 				</div>
 			</div>
-            <!-- /REVOLUTION SLIDER -->
+            
+			</div> <!-- /SLIDER SECTION  -->
 			
-			
-			 <!-- <hr class="m-0" /> 1px line separator -- added, Matthew Cote --- 
-                		§ A ribbon under the slider details three elements:
-			□ The company has won numerous awards and participated in many major projects. A link redirects to the section that retraces these awards and projects.
-			□ The company offers a service for residential buildings and offers a link to the page that details this service
-			□ The company offers a service for corporate buildings and offers a link to the page that details this service
-            -->
-            <!-- Services -->
+			<!-- SERVICES SECTION -->
 			<section id="services">
 				<div class="container">
 					
@@ -531,22 +521,9 @@
 
 				</div>
 			</section>
-			<!-- /Services -->
+			<!-- /SERVICES SECTION -->
            
-
-
-			<!-- BUTTON CALLOUT 
-			<a href="#" class="btn btn-xlg btn-primary fs-20 fullwidth/3 m-0 rad-0 p-40">
-				<span class="font-lato fs-30">
-					Did Smarty convinced you? 
-					<strong>Contact us &raquo;</strong>
-                </span>
-            </a>
-            
-			 -->
-
-
-			<!-- Parallax added, Matthew Cote --- 
+			<!-- 1976 SECTION --
                 		§ A ribbon under the slider details three elements:
 			□ The company has won numerous awards and participated in many major projects. A link redirects to the section that retraces these awards and projects.
 			□ The company offers a service for residential buildings and offers a link to the page that details this service
@@ -566,40 +543,28 @@
 
 				</div>
 			</section>
-			<!-- /Parallax -->
+			<!-- /1976 SECTION -->
 
-
-
-            <!-- PORTFOLIO added, Matthew Cote ---
+            <!-- PORTFOLIO SECTION --
                         § A Portfolio section below in the Home Page features a combination of 12 recognitions or major projects made by the company. 
                         These prizes and projects are fictitious and must be invented by the developer. They must reflect a diversity among the residential, 
-                        corporate, project names, prizes, etc. Their visuals are not provided and must be imagined by the developers.
-
-         < WORK /PORTFOLIO added, Matthew Cote ---
-                        § A section of the Home Page must be positioned under the Portfolio and present the CEO of the company and the employee of the month. 
-                        The CEO of Rocket Elevators is one of the coaches introduced as supervisor of the cohort. The selected coach will therefore provide 
-                        the participant with a photo that can be inserted into the carousel. The employee of the month is the participant himself, so she or 
-                        he will have to provide a photo that will be inserted into his carousel.-->
+                        corporate, project names, prizes, etc. Their visuals are not provided and must be imagined by the developers. -->
 			<section id="portfolio">
 				<div class="container">
 
-					<header class="text-center mb-60">
-						<h2>Our Work</h2>
-						<p class="lead font-lato">Lorem ipsum dolor sit amet adipiscium elit</p>
-						<hr />
-					</header>
-
+					<div class="heading-title heading-dotted text-center">
+						<h2>OUR PORTFOLIO</h2>
+					</div>
 
 					<!-- PORTFOLIO -->
 					<div id="portfolio" class="portfolio-nogutter">
 
 						<ul class="nav nav-pills mix-filter mb-60">
 							<li data-filter="all" class="filter active"><a href="#">All</a></li>
-							<li data-filter="development" class="filter"><a href="#">Development</a></li>
-							<li data-filter="photography" class="filter"><a href="#">Photography</a></li>
-							<li data-filter="design" class="filter"><a href="#">Design</a></li>
+							<li data-filter="residential" class="filter"><a href="#">Residential</a></li>
+							<li data-filter="commercial" class="filter"><a href="#">Commercial</a></li>
+							<li data-filter="awards" class="filter"><a href="#">Awards</a></li>
 						</ul>
-
 
 						<div class="row mix-grid">
 
@@ -1085,8 +1050,13 @@
 
 				</div>
 			</section>
+			<!-- /PORTFOLIO SECTION -->
 
-			<!-- Testimonials -->
+			<!-- STAFF SECTION
+				  section of the Home Page must be positioned under the Portfolio and present the CEO of the company and the employee of the month.
+				 The CEO of Rocket Elevators is one of the coaches introduced as supervisor of the cohort. The selected coach will therefore provide the participant 
+				 with a photo that can be inserted into the carousel. The employee of the month is the participant himself, so she or he will have to provide a photo
+				  that will be inserted into his carousel.-->
 			<section class="section-xs dark">
 				<div class="container">
 
@@ -1119,9 +1089,9 @@
 
 				</div>
 			</section>
-			<!-- /Testimonials -->
+			<!-- /STAFF SECTION -->
 
-            <!-- News added, Matthew Cote ---
+            <!-- NEWS SECTION ---
                     § Under the Home Page staff section, there will be a “News” section and Press Releases will be showcased below. 
                     A selection of 6 news related to the elevator business will have to be proposed. These articles can be extracted from a simple Google search.
                      The authenticity of the articles is not sought here. The visual and summary of these articles must be invented by the developer. 
@@ -1315,45 +1285,9 @@
 
 				</div>
 			</section>
-            <!-- /News added, Matthew Cote ---
-            -->
+            <!-- /NEWS SECTION -->
 
-
-			<!-- Overview -->
-			<section id="overview">
-				<div class="container text-center">
-
-					<div class="row text-left">
-
-						<div class="col-sm-8">
-							<img src="demo_files/images/laptop.png" alt="product image" />
-						</div>
-
-						<div class="col-sm-4">
-							<h3 class="fw-300">Quick <span>Overview</span></h3>
-						
-							<p>Lorem ipsum dolor sit amet, hinc dolores noluisse at vel, ex quod aperiri scaevola has, cum te sanctus denique. Eu liber docendi petentium has, labore.</p>
-							<p>Etiam falli mentitum id mel, ut mel sumo postulant referrentur. At has minim imperdiet, soluta offendit ocurreret sea an. </p>
-							
-							<hr />
-
-							<ul class="list-unstyled list-icons">
-								<li><i class="fa fa-check"></i> Nobis nemore epicuri pro ea</li>
-								<li><i class="fa fa-check"></i> Qui dicunt singulis dissentias an</li>
-								<li><i class="fa fa-check"></i> Ea vis diceret constituam</li>
-								<li><i class="fa fa-check"></i> Mei no autem idque integre, sumo facilis</li>
-								<li><i class="fa fa-check"></i> Est quodsi labitur moderatius an</li>
-							</ul>
-
-						</div>
-					</div>
-
-				</div>
-			</section>
-			<!-- /Overview -->
-
-
-            <!-- Clients added, Matthew Cote ---
+            <!-- CLIENTS SECTION --
                         § A section "Our Customers" must be implemented under the section of the press review, always on the Home Page. 
                         This section should simply list the logos of 12 Rocket Elevators customers. These 12 customers are fictitious and 
                         the names and logos can be taken on the Web. They can be existing known companies or they can me made up and parodies.
@@ -1410,9 +1344,9 @@
 
 				</div>
 			</section>
-			<!-- /Clients -->
+			<!-- /CLIENTS SECTION -->
 
-			<!-- CONTACT 
+			<!-- CONTACT SECTION
 				-- added, Matthew Cote
 				§ The "Contact Us" form is the last section set up on the Home Page before the Footer. It offers two sections, 
 				the first gives the address and the contact information of Rocket Elevators (the coordinates are those of CodeBoxx School) 
@@ -1600,8 +1534,7 @@
 					</div>
 				</div>
 			</section>
-			<!-- /CONTACT -->
-
+			<!-- /CONTACT SECTION-->
 
             <!-- FOOTER 
             -- added, Matthew Cote
