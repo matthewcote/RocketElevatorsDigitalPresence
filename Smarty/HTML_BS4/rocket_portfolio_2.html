@@ -2,9 +2,9 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Smarty - Multipurpose + Admin</title>
+		<title>Rocket Elevators - IESC Awards</title>
 		<meta name="description" content="" />
-		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+		<meta name="Author" content="Matthew Cote" />
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
@@ -89,132 +89,168 @@
 		<!-- wrapper -->
 		<div id="wrapper">
 
-			<!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
+			<!-- HEADER SECTION - DONE -->
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 
-                <!-- TOP NAV -- added, Matthew Cote 
-                            § The navigation bar at the top of the page must be visible at all times, it must present the logo of Rocket Elevators and propose a menu 
-                            that offers shortcuts to the various anchor points of the Home Page previously described:
-                           1 □ Home (Top of home page)
-                           2 □ Services
-                           3 □ Portfolio
-                           4 □ News
-                           5 □ Clients
-                           6 □ Contact
-                        -->
-				<header id="topNav">
-					<div class="container">
-						<!-- Mobile Menu Button -->
-						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-							<i class="fa fa-bars"></i>
-						</button>
-
-						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="C:\Users\mattc\Desktop\Codeboxx\Genesis\gitclone\RocketElevatorsDigitalPresence\Smarty\HTML_BS4\index-onepage-construction_altered2.html">
-                            <img src="assets/images/_smarty/R2.png" alt="" />
-                            
-						</a>
-
-						<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
-							<nav class="nav-main">
-
-								<!-- 
-									.nav-onepage
-									Required for onepage navigation links
-									
-									Add .external for an external link!
-								-->
-								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active"><!-- HOME 1  --added, Matthew Cote  - changed href to top from home-->
-										<a href="index-onepage-construction_altered2.html"> 
-											HOME
-										</a>
-									</li>
-                                    
-                                    <li><!-- SERVICES 2-->
-										<a href="index-onepage-construction_altered2.html#services">
-											SERVICES
-										</a>
-                                    </li>
-                                    
-									<li><!-- WORK 3-->
-										<a href="index-onepage-construction_altered2.html#portfolio">
-											PORTFOLIO
-										</a>
-                                    </li>
-                                    
-									<li><!-- NEWS 4-->
-										<a href="index-onepage-construction_altered2.html#news">
-											NEWS
-										</a>
-                                    </li>
-                                    <!--
-									<li> OVERVIEW
-										<a href="#overview">
-											OVERVIEW added, Matthew Cote
-										</a>
-                                    </li>
-                                     -->
-									<li><!-- CLIENTS 5-->
-										<a href="index-onepage-construction_altered2.html#clients">
-											CLIENTS
-										</a>
-									</li>
-                                    <!--
-                                    <li>  BLOG 
-										<a class="external" href="blog-default-aside-left.html">
-											BLOG added, Matthew Cote
-										</a>
-                                    </li>
-                                -->
-									<li><!-- CONTACT 6-->
-										<a href="index-onepage-construction_altered2.html#contacts">
-											CONTACT
-										</a>
-									</li>
-								</ul>
-
-							</nav>
+				<!-- TOP NAV -- 
+								§ The navigation bar at the top of the page must be visible at all times, it must present the logo of Rocket Elevators and propose a menu 
+								that offers shortcuts to the various anchor points of the Home Page previously described:
+							   1 □ Home (Top of home page)
+							   2 □ Services
+							   3 □ Portfolio
+							   4 □ News
+							   5 □ Clients
+							   6 □ Contact
+							-->
+					<header id="topNav">
+						<div class="container">
+	
+							<!-- Mobile Menu Button -->
+							<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+								<i class="fa fa-bars"></i>
+							</button>
+	
+							<!-- Logo -->
+							<a class="logo float-left" href="index-onepage-construction_altered2.html">
+								<img src="assets/images/_smarty/R2.png" alt="" />     
+							</a>
+	
+							<!-- Top Nav 	
+								AVAILABLE CLASSES:
+								submenu-dark = dark sub menu
+							-->
+							<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+								<nav class="nav-main">
+	
+									<!-- 
+										.nav-onepage
+										Required for onepage navigation links
+										
+	
+	
+										Add .external for an external link!
+									-->
+									<ul id="topMain" class="nav nav-pills nav-main nav-hover-animate nav-animate-fadeIn nav-onepage">
+										<li class="active"><!-- HOME 1  --added, Matthew Cote  - changed href to top from home-->
+											<a href="index-onepage-construction_altered2.html"> 
+												HOME
+											</a>
+										</li>
+										
+										<li><!-- SERVICES 2-->
+											<a href="index-onepage-construction_altered2.html#services">
+												SERVICES
+											</a>
+										</li>
+										
+										<li><!-- PORTFOLIO DROPDOWN-->
+											<a class="dropdown-toggle" href="index-onepage-construction_altered2.html#portfolio">
+												PORTFOLIO
+											</a>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="rocket_portfolio_1.html">
+														Backlit Buttons
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_2.html">
+														IESC Awards
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_3.html">
+														Primus Elevator Shaft System
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_4.html">
+														Standard Steel Series
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_5.html">
+														MGM Grande Las Vegas
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_6.html">
+														Executive Series
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_7.html">
+														Buttons that lock
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_8.html">
+														Condominium Elevators 
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_9.html">
+														Hospital Elevator
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_10.html">
+														Space Elevator
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_11.html">
+														Ellies Award
+													</a>
+												</li>
+												<li>
+													<a href="rocket_portfolio_12.html">
+														House Tube
+													</a>
+												</li>
+											</ul>
+										</li>
+										
+										<li><!-- NEWS -->
+											<a href="index-onepage-construction_altered2.html#news">
+												NEWS
+											</a>
+										</li>
+										
+										<!--<li> OVERVIEW
+											<a href="#overview">
+												OVERVIEW added, Matthew Cote
+											</a>
+										</li>-->
+	
+										<li><!-- CLIENTS 5-->
+											<a href="index-onepage-construction_altered2.html#clients">
+												CLIENTS
+											</a>
+										</li>
+										<!--
+										<li>  BLOG 
+											<a class="external" href="blog-default-aside-left.html">
+												BLOG added, Matthew Cote
+											</a>
+										</li>
+									-->
+										<li><!-- CONTACT 6-->
+											<a href="index-onepage-construction_altered2.html#contacts">
+												CONTACT
+											</a>
+										</li>
+									</ul>
+	
+								</nav>
+							</div>
+	
 						</div>
-
-					</div>
-				</header>
-				<!-- /Top Nav -->
-
-			</div>
+					</header>
+				<!-- /Top Nav -->			
+				</div> <!-- /HEADER -->
 			
-			<!-- 
+			<!-- PROJECT NAME/DESCRIPTION
 				PAGE HEADER 
 				
 				CLASSES:
@@ -234,33 +270,22 @@
 			<section class="page-header dark page-header-xs">
 				<div class="container">
 
-					<h1>PROJECT NAME</h1>
-					<span class="font-lato fs-18 hidden-xs-down">We believe in Simple &amp; Creative</span>
+					<h1>IESC Awards</h1>
+					<span class="font-lato fs-18 hidden-xs-down">Rocket Elevator Awarded the Safety Excellence Award by the International Elevator Safety Committee</span>
 
-					
 				</div>
 			</section>
-			<!-- /PAGE HEADER -->
+			<!-- /PROJECT NAME/DESCRIPTION -->
 
-			<!-- -->
+			<!-- IMAGE -->
 			<section class="dark">
 				<div class="container">
 					
-					<!-- OWL SLIDER -->
+					<!-- PORTFOLIO IMAGE -->
 					<div class="container">
-
-						<div class="owl-carousel buttons-autohide controlls-over m-0" data-plugin-options='{"items": 1, "autoPlay": 3500, "autoHeight": false, "navigation": true, "pagination": false, "transitionStyle":"fade", "progressBar":"false"}'>
 							<div>
-								<img class="img-fluid" src="demo_files/images/mockups/1200x800/15-min.jpg" alt="">
+								<img class="img-fluid" src="logoimages\portfolio_12.jpg" alt="">
 							</div>
-							<div>
-								<img class="img-fluid" src="demo_files/images/mockups/1200x800/9-min.jpg" alt="">
-							</div>
-							<div>
-								<img class="img-fluid" src="demo_files/images/mockups/1200x800/2-min.jpg" alt="">
-							</div>
-						</div>
-
 					</div>
 					<!-- /OWL SLIDER -->
 
