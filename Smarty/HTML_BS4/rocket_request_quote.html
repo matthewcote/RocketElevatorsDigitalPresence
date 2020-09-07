@@ -46,7 +46,7 @@
 		BACKGROUND IMAGE [together with .boxed class]
 		data-background="assets/images/_smarty/boxed_background/1.jpg"
 	-->
-	<body class="smoothscroll enable-animation">
+	<body class="enable-animation">
 
 		<!-- SLIDE TOP // OPTIONAL - done for now -->
 		<div id="slidetop">
@@ -266,51 +266,165 @@
 						</div>
 					</header>
 				<!-- /Top Nav -->			
-				</div> <!-- /HEADER -->
-			
-			<!-- PROJECT NAME/DESCRIPTION
-				PAGE HEADER 
-				
-				CLASSES:
-					.page-header-xs	= 20px margins
-					.page-header-md	= 50px margins
-					.page-header-lg	= 80px margins
-					.page-header-xlg= 130px margins
-					.dark			= dark page header
-
-					.shadow-before-1 	= shadow 1 header top
-					.shadow-after-1 	= shadow 1 header bottom
-					.shadow-before-2 	= shadow 2 header top
-					.shadow-after-2 	= shadow 2 header bottom
-					.shadow-before-3 	= shadow 3 header top
-					.shadow-after-3 	= shadow 3 header bottom
-			-->
-			<section class="page-header dark page-header-xs">
+			</div> <!-- /HEADER -->
+		
+			<section id="Request a Quote">
 				<div class="container">
 
-					<h1>The House Tube</h1>
-					<span class="font-lato fs-18 hidden-xs-down">We can put a tube in your house, and you can get in the tube, and go up and down, because its an elevator!</span>
+					<header class="text-center mb-60">
+						<h2>Request a Quote</h2>
+						<p class="lead font-lato">Elevate your project with Rocket Elevators
+						</p>
+						<hr />
+					</header>
 
-				</div>
-			</section>
-			<!-- /PROJECT NAME/DESCRIPTION -->
+					<div class="row">
 
-			<!-- IMAGE -->
-			<section class="dark">
-				<div class="container">
-					
-					<!-- PORTFOLIO IMAGE -->
-					<div class="container">
-							<div>
-								<img class="img-fluid" src="logoimages\portfolio_14.jpg" alt="">
-							</div>
+						<!-- FORM -->
+						<div class="col-md-8 col-sm-8">
+
+							<h3>Start by choosing the building type in the drop down menu</h3>
+							<!--
+								MESSAGES
+								
+									How it works?
+									The form data is posted to php/contact.php where the fields are verified!
+									php.contact.php will redirect back here and will add a hash to the end of the URL:
+										#alert_success 		= email sent
+										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
+										#alert_mandatory	= email not sent - required fields empty
+										Hashes are handled by assets/js/contact.js
+
+									Form data: required to be an array. Example:
+										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
+										Also, add `required` to input fields if is a mandatory field. 
+										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
+
+									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
+												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
+
+									WARNING! Do not change the `email` and `name`!
+												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
+												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
+							-->
+
+							<!-- Alert Success -->
+							<div id="alert_success" class="alert alert-success mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Thank You!</strong> Your message successfully sent!
+							</div><!-- /Alert Success -->
+
+
+							<!-- Alert Failed -->
+							<div id="alert_failed" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>[SMTP] Error!</strong> Internal server error!
+							</div><!-- /Alert Failed -->
+
+
+							<!-- Alert Mandatory -->
+							<div id="alert_mandatory" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
+							</div><!-- /Alert Mandatory -->
+
+
+							<form id="quiz-form" action="php/contact.php" method="post" enctype="multipart/form-data">
+								<fieldset>
+									<input type="hidden" name="action" value="contact_send" />
+
+									<div class="row"> <!-- Building Type Selector - #building-type -->
+										<div class="col-md-4">
+											<label for="contact_department">Building Type *</label>
+											<select id = "building-type" class="form-control pointer" name="contact[building-type][required]">
+												<option value="">--- Select ---</option>
+												<option value="Residential">Residential Building</option>
+												<option value="Commercial">Commercial Building</option>
+												<option value="Corporate">Corporate Building</option>
+												<option value="Hybrid">Hydrid Building</option>
+											</select>
+										</div>
+									</div> <!-- /Building Type Selector - #building-type -->
+
+									<div id="resinput" class="row"> <!--Residential Number Inputs - #building-type -->
+											<div class="col-md-4">
+												<label id="num-apartmentsLabel" for="contact:num-apartments">Number of Apartments *</label>
+												<input required type="text" value="" class="form-control" name="contact[num-apartments][required]" id="contact:num-apartments">
+                                            </div>
+                                            <div class="col-md-4">
+												<label for="contact:num-floors">Number of Floors  *</label>
+												<input required type="text" value="" class="form-control" name="contact[num-floors][required]" id="contact:num-apartments">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:num-basements">Number of Basements  *</label>
+												<input required type="text" value="" class="form-control" name="contact[num-basements][required]" id="contact:num-basements">
+											</div>
+									</div>
+									
+									<div id="cominput" class="row"> <!--Commercial Number Inputs - #building-type -->
+										<div class="col-md-4">
+											<label id="num-apartmentsLabel" for="contact:num-apartments">Number of Apartments *</label>
+											<input required type="text" value="" class="form-control" name="contact[num-apartments][required]" id="contact:num-apartments">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:num-floors">Number of Floors  *</label>
+											<input required type="text" value="" class="form-control" name="contact[num-floors][required]" id="contact:num-apartments">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:num-basements">Number of Basements  *</label>
+											<input required type="text" value="" class="form-control" name="contact[num-basements][required]" id="contact:num-basements">
+										</div>
+									</div>
+
+									<div id="corinput" class="row"> <!--Corporate Number Inputs - #building-type -->
+										<div class="col-md-4">
+											<label id="num-apartmentsLabel" for="contact:num-apartments">Number of Apartments *</label>
+											<input required type="text" value="" class="form-control" name="contact[num-apartments][required]" id="contact:num-apartments">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:num-floors">Number of Floors  *</label>
+											<input required type="text" value="" class="form-control" name="contact[num-floors][required]" id="contact:num-apartments">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:num-basements">Number of Basements  *</label>
+											<input required type="text" value="" class="form-control" name="contact[num-basements][required]" id="contact:num-basements">
+										</div>
+									</div>
+
+									<div id="hybinput" class="row"> <!--Hybrid Number Inputs - #building-type -->
+										<div class="col-md-4">
+											<label id="num-apartmentsLabel" for="contact:num-apartments">Number of Apartments *</label>
+											<input required type="text" value="" class="form-control" name="contact[num-apartments][required]" id="contact:num-apartments">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:num-floors">Number of Floors  *</label>
+											<input required type="text" value="" class="form-control" name="contact[num-floors][required]" id="contact:num-apartments">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:num-basements">Number of Basements  *</label>
+											<input required type="text" value="" class="form-control" name="contact[num-basements][required]" id="contact:num-basements">
+										</div>
+									</div>
+
+
+								</fieldset>
+
+								<div class="row">
+									<div class="col-md-12">
+										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
+									</div>
+								</div>
+							</form>
+
+						</div>
+						<!-- /FORM -->
+
+
+						
 					</div>
-					<!-- /OWL SLIDER -->
-
-					
 				</div>
 			</section>
-			<!-- / -->
+			<!-- /CONTACT -->
 
 			<!-- FOOTER - DONE
             -- added, Matthew Cote
@@ -324,7 +438,7 @@
 						<!-- col #1 -->
 						<div class="col-md-8">
 
-							<h3 class="letter-spacing-1">Rocket Elevators - Elevate Safety, Speed and Style</h3>
+							<h3 id = "rocketTitle" class="letter-spacing-1">Rocket Elevators - Elevate Safety, Speed and Style</h3>
 
 							<!-- Small Description -->
 							<p>
@@ -378,10 +492,9 @@
 		</div>
 		<!-- /wrapper -->
 
-
+	
 		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
-
 
 		<!-- PRELOADER -->
 		<div id="preloader">
@@ -397,6 +510,54 @@
 
 		<script src="assets/js/scripts.js"></script>
 		
-		
+		<script> // My new JS Code goes here
+			//
+			$("#resinput").hide();
+			$("#cominput").hide();
+			$("#corinput").hide();
+			$("#hybinput").hide();
+
+			$("#building-type").on("change", function(event) { // Submit Quote Event Handler
+       		event.preventDefault();
+			var $answer = $("#building-type"); //takes the dom element #quiz-answer and creates a Jquery collection.
+        	var answer = $answer.val(); // takes the value of the user input of this Jquery collection and passes it to a variable answer
+			//console.log(answer);
+			if (answer === 'Residential'){
+				console.log('Residential' + answer);
+				$("#resinput").show();
+				$("#cominput").hide();
+				$("#corinput").hide();
+				$("#hybinput").hide();
+			} else if 
+			(answer === 'Commercial'){
+				console.log('Commercial' + answer);
+				$("#cominput").show();
+				$("#resinput").hide();
+				$("#corinput").hide();
+				$("#hybinput").hide();
+			} else if 
+			(answer === 'Corporate'){
+				console.log('Corporate' + answer);
+				$("#corinput").show();
+				$("#cominput").hide();
+				$("#resinput").hide();
+				$("#hybinput").hide();
+			} else if (answer === 'Hybrid'){
+				console.log('Hybrid' + answer);
+				$("#hybridinput").show();
+				$("#cominput").hide();
+				$("#corinput").hide();
+				$("#resinput").hide();
+			} else 
+			console.log('error - answer variable is ' + answer );
+			$("#resinput").hide();
+			$("#cominput").hide();
+			$("#corinput").hide();
+			$("#hybinput").hide();
+    		});
+
+			
+			
+			//End My new JS Code here.	</script> 
 	</body>
 </html>
