@@ -286,21 +286,15 @@
 						</p>
 						<hr />
 					</header>
-
+					<h3 class="text-center mb-60" id="instructions">Start by choosing the building type in the drop down menu</h3>
 					<div class="row">
 
 						<!-- FORM -->
 						<div class="col-md-8 col-sm-8">
-
-							<h3 id="instructions">Start by choosing the building type in the drop down menu</h3>
-							
-
-								<!-- /Alert Mandatory -->
 							<form id="quiz-form" >
 								<fieldset>
-
 									<div class="row"> <!-- Building Type Selector - #building-type -->
-										<div class="col-md-6">
+										<div class= "col-md-6">
 											<label for="contact_department">Building Type *</label>
 											<select id = "building-type" class="form-control pointer" name="contact[building-type][required]">
 												<option value="">--- Select ---</option>
@@ -311,104 +305,7 @@
 											</select>
 										</div>
 									</div> <!-- /Building Type Selector - #building-type -->
-
-									<div id="resinput" class="row"> <!--Residential Number Inputs - #building-type -->
-											<div class="row">
-												<label for="aptnum">Number of Apartments *</label>
-												<input required type="number" min="1"  value="0" class="form-control" name="aptnum" id="numapartments">
-                                            </div>
-                                            <div class="row">
-												<label for="flrnum">Number of Floors *</label>
-												<input required type="number" min="1"  value="0" class="form-control" name="flrnum" id="numfloors">
-											</div>
-											<div class="row">
-												<label for="bsnum" for="aptnum">Number of Basements *</label>
-												<input required type="number" min="1"  value="0" class="form-control" name="bsnum" id="numbasements">
-											</div>
-									</div>
-									
-									<div id="cominput" class="row"> <!--Commercial Number Inputs - #building-type -->
-										<div class="row">
-											<label for="biznum">Number of Distinct Businesses *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="biznum" id="numbiz">
-										</div><br>
-										<div class="row">
-											<label>Number of Floors *</label>
-											<input required type="number" min="1"  value="0" class="form-control"  id="comnumfloors">
-										</div>
-										<div class="row">
-											<label>Number of Basements *</label>
-											<input required type="number" min="1"  value="0" class="form-control"  id="numbasements">
-										</div>
-										<div class="row">
-											<label>Number of Parking Spaces *</label>
-											<input required type="number" min="1"  value="0" class="form-control" id="numspaces">
-										</div>
-										<div class="row">
-											<label>Number of Elevator Cages to be deployed *</label>
-											<input required type="number" min="1"  value="0" class="form-control"  id="numcages">
-										</div>
-									</div>
-
-									<div id="corinput" class="row"> <!--Corporate Number Inputs - #building-type -->
-										<div class="row">
-											<label>Number of Seperate Tenet Companies *</label>
-											<input required type="number" min="1"  value="0" class="form-control"  id="numcomps">
-										</div>
-										<div class="row">
-											<label>Number of Floors *</label>
-											<input required type="number" min="1"  value="0" class="form-control"  id="numfloors">
-										</div>
-										<div class="row">
-											<label>Number of Basements *</label>
-											<input required type="number" min="1"  value="0" class="form-control"  id="numbasements">
-										</div>
-										<div class="row">
-											<label>Number of Parking Spaces *</label>
-											<input required type="number" min="1"  value="0" class="form-control" id="numspaces">
-										</div>
-										<div class="row">
-											<label>The Maximum Number of Occupants per Floor *</label>
-											<input required type="number" min="1"  value="0" class="form-control" id="nummax">
-										</div>
-									</div>
-
-									<div id="hybinput" class="row"> <!--Hybrid Number Inputs - #building-type -->
-										<div class="row">
-											<label for="contact:numbiz">Number of Distinct Businesses *</label>
-											<input required type="number" min="1"  value="0" class="form-control"  id="numbiz">
-										</div>
-										<div class="row">
-											<label for="contact:num-floors">Number of Floors *</label>
-											<input required type="number"  min="1"  value="0" class="form-control"  id="num-apartments">
-										</div>
-										<div class="row">
-											<label for="contact:num-basements">Number of Basements *</label>
-											<input required type="number" min="1"  value="0" class="form-control"  id="num-basements">
-										</div>
-										<div class="row">
-											<label for="contact:numspaces">Number of Parking Spaces *</label>
-											<input required type="number" min="1"  value="0" class="form-control" id="numspaces">
-										</div>
-										<div class="row">
-											<label >The Maximum Number of Occupants per Floor *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="c" id="nummax">
-										</div>
-										<div class="row">
-											<label >Max Daily Hours of Activity in the Building *</label>
-											<input required type="number" max="24" min="1"  value="0" class="form-control" name="]" id="hours">
-										</div>
-									</div>
-								</fieldset>
-								<div class="row">
-									<div class="col-md-12">
-										<button id="quote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
-									</div>
-								</div>
-							
 							</form>
-							
-						
 						</div>
 	
 					</div> <!-- /FORM -->
@@ -416,9 +313,134 @@
 			</section>
 			<!-- /CONTACT -->
 
-			<!-- New Form -->
 			
-			<!-- /New Form -->
+		<div id="resform" class="container"><!-- Residential Form -->
+			<form >
+				<div > <!--Residential Number Inputs - #building-type -->
+					<div class="row">
+						<label for="aptnum">Number of Apartments *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="aptnum" id="aptnum">
+					</div>
+					<div class="row">
+						<label for="flrnum">Number of Floors *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="flrnum" id="flrnum">
+					</div>
+					<div class="row">
+						<label for="bsnum" for="aptnum">Number of Basements *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="bsnum" id="bsnum">
+					</div>
+				</div><br>
+
+				<div class="row">
+					<div class="col-md-12">
+						<button id="resquote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
+					</div>
+				</div>
+			</form>
+		</div><!-- /Residential Form -->
+
+		<div id="comform" class="container">
+			<form >
+				<div> <!--Commercial Number Inputs - #building-type -->
+					<div class="row">
+						<label for="combiz">Number of Distinct Businesses *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="combiz" id="combiz">
+					</div><br>
+					<div class="row">
+						<label for="comflrs">Number of Floors *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="comflrs" id="comflrs">
+					</div>
+					<div class="row">
+						<label for="combs">Number of Basements *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="combs" id="combs">
+					</div>
+					<div class="row">
+						<label for="comspcs">Number of Parking Spaces *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="comspcs" id="comspcs">
+					</div>
+					<div class="row">
+						<label for="comcgs">Number of Elevator Cages to be deployed *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="comcgs" id="comcgs">
+					</div><br>
+
+					<div class="row">
+						<div class="col-md-12">
+							<button id="comquote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div id="corform" class="container">
+			<form >
+				<div > <!--Corpercial Number Inputs - #building-type -->
+					<div class="row">
+						<label for="corbiz">Number of Seperate Tenet Companies *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="corbiz" id="corbiz">
+					</div>
+					<div class="row">
+						<label for="corflrs">Number of Floors *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="corflrs" id="corflrs">
+					</div>
+					<div class="row">
+						<label for="corbz">Number of Basements *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="corbs" id="corbs">
+					</div>
+					<div class="row">
+						<label for="corspcs">Number of Parking Spaces *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="corspcs" id="corspcs">
+					</div>
+					<div class="row">
+						<label for="cormax">The Maximum Number of Occupants per Floor *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="cormax" id="cormax">
+					</div><br>
+
+					<div class="row">
+						<div class="col-md-12">
+							<button id="corquote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div id="hybform" class="container">
+			<form >
+				<div > <!--Corpercial Number Inputs - #building-type -->
+					<div class="row">
+						<label for="hybbiz">Number of Distinct Businesses *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="hybbiz" id="hybbiz">
+					</div>
+					<div class="row">
+						<label for="hybflrs">Number of Floors *</label>
+						<input required type="number"  min="1"  value="0" class="form-control" name="hybflrs" id="hybflrs">
+					</div>
+					<div class="row">
+						<label for="hybbs">Number of Basements *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="hybbs" id="hybbs">
+					</div>
+					<div class="row">
+						<label for="hybspcs">Number of Parking Spaces *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="hybspcs" id="hybspcs">
+					</div>
+					<div class="row">
+						<label for="hybmax">The Maximum Number of Occupants per Floor *</label>
+						<input required type="number" min="1"  value="0" class="form-control" name="hybmax" id="hybmax">
+					</div>
+					<div class="row">
+						<label for="hybhrs">Max Daily Hours of Activity in the Building *</label>
+						<input required type="number" max="24" min="1"  value="0" class="form-control" name="hybhrs" id="hybhrs">
+					</div><br>
+
+					<div class="row">
+						<div class="col-md-12">
+							<button id="hybquote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
 
 
 			<!-- FOOTER - DONE
@@ -508,9 +530,7 @@
 		<script> // My new JS Code goes here
 			//
 			var res = function() {
-				var numapartments = $("#numapartments");
-				var apts = numapartments.val();
-				console.log(apts);
+				
 			};
 
 			var com = function() {
@@ -525,13 +545,11 @@
 
 			};
 
-
-
-			$("#resinput").hide();
-			$("#cominput").hide();
-			$("#corinput").hide();
-			$("#hybinput").hide();
 			$("#quote").hide();
+			$("#resform").hide();
+			$("#comform").hide();
+			$("#corform").hide();
+			$("#hybform").hide();
 
 			$("#building-type").on("change", function(event) { // building type selector Event Handler
        		event.preventDefault();
@@ -539,57 +557,41 @@
         	var answer = $answer.val(); // takes the value of the user input of this Jquery collection and passes it to a variable answer
 
 			if (answer === 'Residential'){
-				
-				$("#resinput").show();
-				$("#cominput").hide();
-				$("#corinput").hide();
-				$("#hybinput").hide();
-				$("#quote").show();
+				$("#resform").show();
+				$("#comform").hide();
+				$("#corform").hide();
+				$("#hybform").hide();
 			} 
 
 			if (answer === 'Commercial'){				
-				$("#resinput").hide();
-				$("#cominput").show();
-				$("#corinput").hide();
-				$("#hybinput").hide();
-				$("#quote").show();
+				$("#resform").hide();
+				$("#comform").show();
+				$("#corform").hide();
+				$("#hybform").hide();
+				
 			}
 
 			if (answer === 'Corporate'){
-				$("#resinput").hide();
-				$("#cominput").hide();
-				$("#corinput").show();
-				$("#hybinput").hide();
-				$("#quote").show();
+				$("#resform").hide();
+				$("#comform").hide();
+				$("#corform").show();
+				$("#hybform").hide();
 			}
 
 			if (answer === 'Hybrid'){
-				$("#resinput").hide();
-				$("#cominput").hide();
-				$("#corinput").hide();
-				$("#hybinput").show();
-				$("#quote").show();
+				$("#resform").hide();
+				$("#comform").hide();
+				$("#corform").hide();
+				$("#hybform").show();
 			}
 
     		});
 
-			$("#quote").on("click", function(event) {
+			$("#resquote").on("submit", function(event) {
 				event.preventDefault();
-				var $answer = $("#building-type"); //takes the dom element #quiz-answer and creates a Jquery collection.
-        		var answer = $answer.val();
-
-				if (answer === 'Residential'){
-					res();
-				};
-				if (answer === 'Commercial'){
-					com();
-				};
-				if (answer === 'Corporate'){
-					cor();
-				};
-				if (answer === 'Hybrid'){
-					hyb();
-				};
+				var numapartments = $("#aptnum");
+				var apts = numapartments.val();
+				console.log(apts);				
 			});
 			
 			//End My new JS Code here.	</script> 
