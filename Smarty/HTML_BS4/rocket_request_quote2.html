@@ -23,6 +23,15 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<style>
+			input:invalid {
+			  border: 2px dashed red;
+			}
+	  
+			input:valid {
+			  border: 2px solid black;
+			}
+		</style>
 	</head>
 
 	<!--
@@ -283,55 +292,12 @@
 						<!-- FORM -->
 						<div class="col-md-8 col-sm-8">
 
-							<h3>Start by choosing the building type in the drop down menu</h3>
-							<!--
-								MESSAGES
-								
-									How it works?
-									The form data is posted to php/contact.php where the fields are verified!
-									php.contact.php will redirect back here and will add a hash to the end of the URL:
-										#alert_success 		= email sent
-										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
-										#alert_mandatory	= email not sent - required fields empty
-										Hashes are handled by assets/js/contact.js
-
-									Form data: required to be an array. Example:
-										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
-										Also, add `required` to input fields if is a mandatory field. 
-										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
-
-									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
-												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
-
-									WARNING! Do not change the `email` and `name`!
-												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-							-->
-
-							<!-- Alert Success -->
-							<div id="alert_success" class="alert alert-success mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Thank You!</strong> Your message successfully sent!
-							</div><!-- /Alert Success -->
-
-
-							<!-- Alert Failed -->
-							<div id="alert_failed" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>[SMTP] Error!</strong> Internal server error!
-							</div><!-- /Alert Failed -->
-
-
-							<!-- Alert Mandatory -->
-							<div id="alert_mandatory" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
-							</div><!-- /Alert Mandatory -->
+							<h3 id="instructions">Start by choosing the building type in the drop down menu</h3>
+							
 
 								<!-- /Alert Mandatory -->
-							<form id="quiz-form" action="php/contact.php" method="post" enctype="multipart/form-data">
+							<form id="quiz-form" >
 								<fieldset>
-									<input type="hidden" name="action" value="contact_send" />
 
 									<div class="row"> <!-- Building Type Selector - #building-type -->
 										<div class="col-md-6">
@@ -347,106 +313,113 @@
 									</div> <!-- /Building Type Selector - #building-type -->
 
 									<div id="resinput" class="row"> <!--Residential Number Inputs - #building-type -->
-											<div class="col-md-4">
-												<label for="contact:numapartments">Number of Apartments *</label>
-												<input required type="number" min="1"  value="1" class="form-control" name="contact[numapartments][required]" id="contact_numapartments">
+											<div class="row">
+												<label for="aptnum">Number of Apartments *</label>
+												<input required type="number" min="1"  value="0" class="form-control" name="aptnum" id="numapartments">
                                             </div>
-                                            <div class="col-md-4">
-												<label for="contact:numfloors">Number of Floors *</label>
-												<input required type="number" min="1"  value="0" class="form-control" name="contact[numfloors][required]" id="contact:numfloors">
+                                            <div class="row">
+												<label for="flrnum">Number of Floors *</label>
+												<input required type="number" min="1"  value="0" class="form-control" name="flrnum" id="numfloors">
 											</div>
-											<div class="col-md-4">
-												<label for="contact:numbasements">Number of Basements *</label>
-												<input required type="number" min="0"  value="0" class="form-control" name="contact[numbasements][required]" id="contact:numbasements">
+											<div class="row">
+												<label for="bsnum" for="aptnum">Number of Basements *</label>
+												<input required type="number" min="1"  value="0" class="form-control" name="bsnum" id="numbasements">
 											</div>
 									</div>
 									
 									<div id="cominput" class="row"> <!--Commercial Number Inputs - #building-type -->
-										<div class="col-md-4">
-											<label for="contact:numbiz">Number of Distinct Businesses *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="contact[numbiz][required]" id="contact:numbiz">
+										<div class="row">
+											<label for="biznum">Number of Distinct Businesses *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="biznum" id="numbiz">
+										</div><br>
+										<div class="row">
+											<label>Number of Floors *</label>
+											<input required type="number" min="1"  value="0" class="form-control"  id="comnumfloors">
 										</div>
-										<div class="col-md-4">
-											<label for="contact:numfloors">Number of Floors *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="contact[numfloors][required]" id="contact:numfloors">
+										<div class="row">
+											<label>Number of Basements *</label>
+											<input required type="number" min="1"  value="0" class="form-control"  id="numbasements">
 										</div>
-										<div class="col-md-4">
-											<label for="contact:numbasements">Number of Basements *</label>
-											<input required type="number" min="0"  value="0" class="form-control" name="contact[numbasements][required]" id="contact:numbasements">
+										<div class="row">
+											<label>Number of Parking Spaces *</label>
+											<input required type="number" min="1"  value="0" class="form-control" id="numspaces">
 										</div>
-										<div class="col-md-4">
-											<label for="contact:numspaces">Number of Parking Spaces *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="contact[numspaces][required]" id="contact:numspaces">
-										</div>
-										<div class="col-md-4">
-											<label for="contact:numcages">Number of Elevator Cages to be deployed *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="contact[numcages][required]" id="contact:numcages">
+										<div class="row">
+											<label>Number of Elevator Cages to be deployed *</label>
+											<input required type="number" min="1"  value="0" class="form-control"  id="numcages">
 										</div>
 									</div>
 
 									<div id="corinput" class="row"> <!--Corporate Number Inputs - #building-type -->
-										<div class="col-md-4">
-											<label for="contact:numcomps">Number of Seperate Tenet Companies *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="contact[numcomps][required]" id="contact:numcomps">
+										<div class="row">
+											<label>Number of Seperate Tenet Companies *</label>
+											<input required type="number" min="1"  value="0" class="form-control"  id="numcomps">
 										</div>
-										<div class="col-md-4">
-											<label for="contact:numfloors">Number of Floors *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="contact[numfloors][required]" id="contact:numfloors">
+										<div class="row">
+											<label>Number of Floors *</label>
+											<input required type="number" min="1"  value="0" class="form-control"  id="numfloors">
 										</div>
-										<div class="col-md-4">
-											<label for="contact:numbasements">Number of Basements *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="contact[numbasements][required]" id="contact:numbasements">
+										<div class="row">
+											<label>Number of Basements *</label>
+											<input required type="number" min="1"  value="0" class="form-control"  id="numbasements">
 										</div>
-										<div class="col-md-4">
-											<label for="contact:numspaces">Number of Parking Spaces *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="contact[numspaces][required]" id="contact:numspaces">
+										<div class="row">
+											<label>Number of Parking Spaces *</label>
+											<input required type="number" min="1"  value="0" class="form-control" id="numspaces">
 										</div>
-										<div class="col-md-4">
-											<label for="contact:nummax">The Maximum Number of Occupants per Floor *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="contact[nummax][required]" id="contact:nummax">
+										<div class="row">
+											<label>The Maximum Number of Occupants per Floor *</label>
+											<input required type="number" min="1"  value="0" class="form-control" id="nummax">
 										</div>
 									</div>
 
 									<div id="hybinput" class="row"> <!--Hybrid Number Inputs - #building-type -->
-										<div class="col-md-4">
+										<div class="row">
 											<label for="contact:numbiz">Number of Distinct Businesses *</label>
-											<input required type="number" min="1"  value="0" class="form-control" name="contact[numbiz][required]" id="contact:numbiz">
+											<input required type="number" min="1"  value="0" class="form-control"  id="numbiz">
 										</div>
-										<div class="col-md-4">
+										<div class="row">
 											<label for="contact:num-floors">Number of Floors *</label>
-											<input required type="number"  min="1"  value="0" class="form-control" name="contact[num-floors][required]" id="contact:num-apartments">
+											<input required type="number"  min="1"  value="0" class="form-control"  id="num-apartments">
 										</div>
-										<div class="col-md-4">
+										<div class="row">
 											<label for="contact:num-basements">Number of Basements *</label>
-											<input required type="number" min="0"  value="0" class="form-control" name="contact[num-basements][required]" id="contact:num-basements">
+											<input required type="number" min="1"  value="0" class="form-control"  id="num-basements">
 										</div>
-										<div class="col-md-4">
+										<div class="row">
 											<label for="contact:numspaces">Number of Parking Spaces *</label>
-											<input required type="number" min="0"  value="0" class="form-control" name="contact[numspaces][required]" id="contact:numspaces">
+											<input required type="number" min="1"  value="0" class="form-control" id="numspaces">
 										</div>
-										<div class="col-md-4">
-											<label for="contact:nummax">The Maximum Number of Occupants per Floor *</label>
-											<input required type="number" min="0"  value="0" class="form-control" name="contact[nummax][required]" id="contact:nummax">
+										<div class="row">
+											<label >The Maximum Number of Occupants per Floor *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="c" id="nummax">
 										</div>
-										<div class="col-md-4">
-											<label for="contact:hours">Max Daily Hours of Activity in the Building *</label>
-											<input required type="number" max="24" min="0"  value="24" class="form-control" name="contact[hours][required]" id="contact:hours">
+										<div class="row">
+											<label >Max Daily Hours of Activity in the Building *</label>
+											<input required type="number" max="24" min="1"  value="0" class="form-control" name="]" id="hours">
 										</div>
 									</div>
 								</fieldset>
+								<div class="row">
+									<div class="col-md-12">
+										<button id="quote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
+									</div>
+								</div>
+							
 							</form>
 							
-						<div class="row">
-							<div class="col-md-12">
-								<button id="quote" class="btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
-							</div>
-						</div>
+						
 						</div>
 	
 					</div> <!-- /FORM -->
 				</div>
 			</section>
 			<!-- /CONTACT -->
+
+			<!-- New Form -->
+			
+			<!-- /New Form -->
+
 
 			<!-- FOOTER - DONE
             -- added, Matthew Cote
@@ -535,7 +508,7 @@
 		<script> // My new JS Code goes here
 			//
 			var res = function() {
-				var numapartments = $("#contact_numapartments");
+				var numapartments = $("#numapartments");
 				var apts = numapartments.val();
 				console.log(apts);
 			};
