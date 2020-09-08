@@ -328,100 +328,122 @@
 								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
 							</div><!-- /Alert Mandatory -->
 
-
+								<!-- /Alert Mandatory -->
 							<form id="quiz-form" action="php/contact.php" method="post" enctype="multipart/form-data">
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
 									<div class="row"> <!-- Building Type Selector - #building-type -->
-										<div class="col-md-4">
+										<div class="col-md-6">
 											<label for="contact_department">Building Type *</label>
 											<select id = "building-type" class="form-control pointer" name="contact[building-type][required]">
 												<option value="">--- Select ---</option>
 												<option value="Residential">Residential Building</option>
 												<option value="Commercial">Commercial Building</option>
 												<option value="Corporate">Corporate Building</option>
-												<option value="Hybrid">Hydrid Building</option>
+												<option value="Hybrid">Hybrid Building</option>
 											</select>
 										</div>
 									</div> <!-- /Building Type Selector - #building-type -->
 
 									<div id="resinput" class="row"> <!--Residential Number Inputs - #building-type -->
 											<div class="col-md-4">
-												<label id="num-apartmentsLabel" for="contact:num-apartments">Number of Apartments *</label>
-												<input required type="text" value="" class="form-control" name="contact[num-apartments][required]" id="contact:num-apartments">
+												<label for="contact:numapartments">Number of Apartments *</label>
+												<input required type="number" min="1"  value="0" class="form-control" name="contact[numapartments][required]" id="contact:numapartments">
                                             </div>
                                             <div class="col-md-4">
-												<label for="contact:num-floors">Number of Floors  *</label>
-												<input required type="text" value="" class="form-control" name="contact[num-floors][required]" id="contact:num-apartments">
+												<label for="contact:numfloors">Number of Floors *</label>
+												<input required type="number" min="1"  value="0" class="form-control" name="contact[numfloors][required]" id="contact:numfloors">
 											</div>
 											<div class="col-md-4">
-												<label for="contact:num-basements">Number of Basements  *</label>
-												<input required type="text" value="" class="form-control" name="contact[num-basements][required]" id="contact:num-basements">
+												<label for="contact:numbasements">Number of Basements *</label>
+												<input required type="number" min="0"  value="0" class="form-control" name="contact[numbasements][required]" id="contact:numbasements">
 											</div>
 									</div>
 									
 									<div id="cominput" class="row"> <!--Commercial Number Inputs - #building-type -->
 										<div class="col-md-4">
-											<label id="num-apartmentsLabel" for="contact:num-apartments">Number of Apartments *</label>
-											<input required type="text" value="" class="form-control" name="contact[num-apartments][required]" id="contact:num-apartments">
+											<label for="contact:numbiz">Number of Distinct Businesses *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="contact[numbiz][required]" id="contact:numbiz">
 										</div>
 										<div class="col-md-4">
-											<label for="contact:num-floors">Number of Floors  *</label>
-											<input required type="text" value="" class="form-control" name="contact[num-floors][required]" id="contact:num-apartments">
+											<label for="contact:numfloors">Number of Floors *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="contact[numfloors][required]" id="contact:numfloors">
 										</div>
 										<div class="col-md-4">
-											<label for="contact:num-basements">Number of Basements  *</label>
-											<input required type="text" value="" class="form-control" name="contact[num-basements][required]" id="contact:num-basements">
+											<label for="contact:numbasements">Number of Basements *</label>
+											<input required type="number" min="0"  value="0" class="form-control" name="contact[numbasements][required]" id="contact:numbasements">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:numspaces">Number of Parking Spaces *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="contact[numspaces][required]" id="contact:numspaces">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:numcages">Number of Elevator Cages to be deployed *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="contact[numcages][required]" id="contact:numcages">
 										</div>
 									</div>
 
 									<div id="corinput" class="row"> <!--Corporate Number Inputs - #building-type -->
 										<div class="col-md-4">
-											<label id="num-apartmentsLabel" for="contact:num-apartments">Number of Apartments *</label>
-											<input required type="text" value="" class="form-control" name="contact[num-apartments][required]" id="contact:num-apartments">
+											<label for="contact:numcomps">Number of Seperate Tenet Companies *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="contact[numcomps][required]" id="contact:numcomps">
 										</div>
 										<div class="col-md-4">
-											<label for="contact:num-floors">Number of Floors  *</label>
-											<input required type="text" value="" class="form-control" name="contact[num-floors][required]" id="contact:num-apartments">
+											<label for="contact:numfloors">Number of Floors *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="contact[numfloors][required]" id="contact:numfloors">
 										</div>
 										<div class="col-md-4">
-											<label for="contact:num-basements">Number of Basements  *</label>
-											<input required type="text" value="" class="form-control" name="contact[num-basements][required]" id="contact:num-basements">
+											<label for="contact:numbasements">Number of Basements *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="contact[numbasements][required]" id="contact:numbasements">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:numspaces">Number of Parking Spaces *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="contact[numspaces][required]" id="contact:numspaces">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:nummax">The Maximum Number of Occupants per Floor *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="contact[nummax][required]" id="contact:nummax">
 										</div>
 									</div>
 
 									<div id="hybinput" class="row"> <!--Hybrid Number Inputs - #building-type -->
 										<div class="col-md-4">
-											<label id="num-apartmentsLabel" for="contact:num-apartments">Number of Apartments *</label>
-											<input required type="text" value="" class="form-control" name="contact[num-apartments][required]" id="contact:num-apartments">
+											<label for="contact:numbiz">Number of Distinct Businesses *</label>
+											<input required type="number" min="1"  value="0" class="form-control" name="contact[numbiz][required]" id="contact:numbiz">
 										</div>
 										<div class="col-md-4">
-											<label for="contact:num-floors">Number of Floors  *</label>
-											<input required type="text" value="" class="form-control" name="contact[num-floors][required]" id="contact:num-apartments">
+											<label for="contact:num-floors">Number of Floors *</label>
+											<input required type="number"  min="1"  value="0" class="form-control" name="contact[num-floors][required]" id="contact:num-apartments">
 										</div>
 										<div class="col-md-4">
-											<label for="contact:num-basements">Number of Basements  *</label>
-											<input required type="text" value="" class="form-control" name="contact[num-basements][required]" id="contact:num-basements">
+											<label for="contact:num-basements">Number of Basements *</label>
+											<input required type="number" min="0"  value="0" class="form-control" name="contact[num-basements][required]" id="contact:num-basements">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:numspaces">Number of Parking Spaces *</label>
+											<input required type="number" min="0"  value="0" class="form-control" name="contact[numspaces][required]" id="contact:numspaces">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:nummax">The Maximum Number of Occupants per Floor *</label>
+											<input required type="number" min="0"  value="0" class="form-control" name="contact[nummax][required]" id="contact:nummax">
+										</div>
+										<div class="col-md-4">
+											<label for="contact:hours">Max Daily Hours of Activity in the Building *</label>
+											<input required type="number" max="24" min="0"  value="24" class="form-control" name="contact[hours][required]" id="contact:hours">
 										</div>
 									</div>
-
-
 								</fieldset>
-
-								<div class="row">
-									<div class="col-md-12">
-										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
-									</div>
-								</div>
 							</form>
-
+							
+						<div class="row">
+							<div class="col-md-12">
+								<button id="quote" class="btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
+							</div>
 						</div>
-						<!-- /FORM -->
-
-
-						
-					</div>
+						</div>
+	
+					</div> <!-- /FORM -->
 				</div>
 			</section>
 			<!-- /CONTACT -->
@@ -512,51 +534,87 @@
 		
 		<script> // My new JS Code goes here
 			//
+			var res = function() {
+
+			};
+
+			var com = function() {
+
+			};
+
+			var cor = function() {
+
+			};
+
+			var hyb = function() {
+
+			};
+
+
+
 			$("#resinput").hide();
 			$("#cominput").hide();
 			$("#corinput").hide();
 			$("#hybinput").hide();
+			$("#quote").hide();
 
-			$("#building-type").on("change", function(event) { // Submit Quote Event Handler
+			$("#building-type").on("change", function(event) { // building type selector Event Handler
        		event.preventDefault();
 			var $answer = $("#building-type"); //takes the dom element #quiz-answer and creates a Jquery collection.
         	var answer = $answer.val(); // takes the value of the user input of this Jquery collection and passes it to a variable answer
-			//console.log(answer);
+
 			if (answer === 'Residential'){
-				console.log('Residential' + answer);
+				
 				$("#resinput").show();
 				$("#cominput").hide();
 				$("#corinput").hide();
 				$("#hybinput").hide();
-			} else if 
-			(answer === 'Commercial'){
-				console.log('Commercial' + answer);
+				$("#quote").show();
+			} 
+
+			if (answer === 'Commercial'){				
+				$("#resinput").hide();
 				$("#cominput").show();
-				$("#resinput").hide();
 				$("#corinput").hide();
 				$("#hybinput").hide();
-			} else if 
-			(answer === 'Corporate'){
-				console.log('Corporate' + answer);
+				$("#quote").show();
+			}
+
+			if (answer === 'Corporate'){
+				$("#resinput").hide();
+				$("#cominput").hide();
 				$("#corinput").show();
-				$("#cominput").hide();
-				$("#resinput").hide();
 				$("#hybinput").hide();
-			} else if (answer === 'Hybrid'){
-				console.log('Hybrid' + answer);
-				$("#hybridinput").show();
+				$("#quote").show();
+			}
+
+			if (answer === 'Hybrid'){
+				$("#resinput").hide();
 				$("#cominput").hide();
 				$("#corinput").hide();
-				$("#resinput").hide();
-			} else 
-			console.log('error - answer variable is ' + answer );
-			$("#resinput").hide();
-			$("#cominput").hide();
-			$("#corinput").hide();
-			$("#hybinput").hide();
+				$("#hybinput").show();
+				$("#quote").show();
+			}
+
     		});
 
-			
+			$("#quote").on("change", function(event) {
+				var $answer = $("#building-type"); //takes the dom element #quiz-answer and creates a Jquery collection.
+        		var answer = $answer.val();
+
+				if (answer === 'Residential'){
+					res();
+				};
+				if (answer === 'Commercial'){
+					com();
+				};
+				if (answer === 'Corporate'){
+					cor();
+				};
+				if (answer === 'Hybrid'){
+					hyb();
+				};
+			});
 			
 			//End My new JS Code here.	</script> 
 	</body>
