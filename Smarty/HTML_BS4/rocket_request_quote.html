@@ -535,7 +535,9 @@
 		<script> // My new JS Code goes here
 			//
 			var res = function() {
-
+				var $numapartments = $("#numapartments");
+				var apts = $numapartments.val();
+				console.log(numapartments);
 			};
 
 			var com = function() {
@@ -598,7 +600,7 @@
 
     		});
 
-			$("#quote").on("change", function(event) {
+			$("#quote").on("click", function(event) {
 				var $answer = $("#building-type"); //takes the dom element #quiz-answer and creates a Jquery collection.
         		var answer = $answer.val();
 
