@@ -619,19 +619,33 @@
 				return true;
 			}
 
+			var service = function(product){
+				var price = 0;
+				if (product === 'Standard') {price = 7565;}
+				if (product === 'Premium') {price = 12345;}
+				if (product === 'Excelium') {price = 15400;}
+				return price;
+			}
+
 			var res = function() {
 				//establish jQuery collections
 				var $aptnum = $("#aptnum");
 				var $flrnum = $("#flrnum");
 				var $bsnum = $("#bsnum");
 				var $resproduct = $("#resproduct");
-				
-
-				//pass values of jQuery collection to value
+							
+				//pass values of jQuery collection to variables
 				var apt = Number($aptnum.val());
 				var flr = Number($flrnum.val());
 				var bs = Number($bsnum.val());
-				var res = $('input[name=resproduct]:checked', '#resform').val()
+				var res = $('input[name=resproduct]:checked', '#resform').val();
+				var price = service(res);
+
+				var avg = Math.ceil(apt/flr) ;
+				var shaft = Math.ceil(avg/6);
+				var col = Math.ceil(flr/20);
+				shaft *= col;
+				
 
 				//call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
 				if (verify(apt)){
@@ -640,7 +654,7 @@
 						console.log("flr = true");
 						if (verify(bs)){
 							console.log("bs = true");
-							$("#labelresquote").text("success");
+							$("#labelresquote").text("Price is $" + price + ".00 and we have determined you need " + shaft + " elevator shafts in your building");
 						} else {
 							$("#labelresquote").text("We need the number of basements that are planned for your residential building. Input must be a positive integer.");
 						} 
@@ -653,7 +667,7 @@
   				
 
 				//check values
-				console.log("apt = " + apt + "flr = " + flr + "bs = " + bs + "res = " + res);
+				console.log("apt = " + apt + "flr = " + flr + "bs = " + bs + "res = " + res + "avg = " + avg + "shaft = " + shaft + "col = " + col);
 			};
 
 			var com = function() {
@@ -674,6 +688,12 @@
 				var spcs = Number($comspcs.val());
 				var cgs = Number($comcgs.val());
 				var com = $('input[name=comproduct]:checked', '#comform').val();
+				var price = service(com);
+				
+				
+
+				var service = 0;
+
 
 				//call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
 				if (verify(biz)){
@@ -727,6 +747,8 @@
 				var spcs = Number($corspcs.val());
 				var max = Number($cormax.val());
 				var cor = $('input[name=corproduct]:checked', '#corform').val();
+				var price = service(cor);
+				
 
 				//call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
 				if (verify(biz)){
@@ -780,6 +802,8 @@
 				var max = Number($hybmax.val());
 				var hrs = Number($hybhrs.val());
 				var hyb = $('input[name=hybproduct]:checked', '#hybform').val();
+				var price = service(hyb);
+				
 				
 				//call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
 				if (verify(biz)){
@@ -816,11 +840,6 @@
 					$("#labelhybquote").text("We need the number of distinct businesses that are planned for your hybrid building. Input must be a positive integer."); 
 				}
 				//create more variables and do calculations
-
-			
-				
-  				
-
 				//check values
 				console.log("biz = " + biz + "flr = " + flr + "bs = " + bs + "spcs = " + spcs + "max = " + max + "hrs = " + hrs + "hyb = " + hyb);
 				
@@ -873,6 +892,7 @@
     		});
 
 			$("#resquote").on("click", function(event) {
+				event.preventDefault();	
 				res();
 
 				event.preventDefault();			
