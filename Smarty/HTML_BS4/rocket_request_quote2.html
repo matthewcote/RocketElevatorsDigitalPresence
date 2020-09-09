@@ -332,7 +332,7 @@
 				</div><br>
 
 				<div class="row"><!--Radio Buttons and Quote Label Row -->
-					<div class="col-md-4">
+					<div class="col-md-2">
 						<input type="radio" id="productChoice1"
 						name="resproduct" value="Standard">
 						<label for="productChoice1">Standard</label>
@@ -345,10 +345,14 @@
 						name="resproduct" value="Excelium" checked>
 						<label for="productChoice3">Excelium</label>
 					</div> <!--/Radio Buttons  -->
-				
-					<div class="col-md-4"><!--The Quote -->
-						<label id="labelresquote"></label>
-					</div><!--/The Quote -->
+					
+					<div class="col-md-8">
+						<p id="labelresquote"></p>
+						<p id="labelresquote2"></p>
+
+					</div>
+					
+					
 				</div>
 
 				<div class="row">
@@ -627,6 +631,15 @@
 				return price;
 			}
 
+			var install = function(price){
+				var inst = 0;
+				if (price === 7565) {inst = 0.1;}
+				if (price === 12345) {inst = 0.13;}
+				if (price === 15400) {inst = 0.16;}
+
+				return inst;
+			}
+			
 			var res = function() {
 				//establish jQuery collections
 				var $aptnum = $("#aptnum");
@@ -642,9 +655,10 @@
 				var price = service(res);
 
 				var avg = Math.ceil(apt/flr) ;
-				var shaft = Math.ceil(avg/6);
+				var shafts = Math.ceil(avg/6);
 				var col = Math.ceil(flr/20);
-				shaft *= col;
+				shaft = shafts * col;
+				var inst = install(price);
 				
 
 				//call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
@@ -654,7 +668,13 @@
 						console.log("flr = true");
 						if (verify(bs)){
 							console.log("bs = true");
-							$("#labelresquote").text("Price is $" + price + ".00 and we have determined you need " + shaft + " elevator shafts in your building");
+							$("#labelresquote").html("Based on your input, your proposed building should need " + col + 
+							" columns. Each column will need " + shafts + " elevator shafts. For a total of " + 
+							shaft + " elevators shafts.<br><br>The price of each " + res + " elevator is " + "$" + price + 
+							".00.<br>" + shaft + " elevators X $" + price + ".00 = $" + shaft*price + ".00.<br>" +
+							"The installation fee is " + inst*100 + "%  - - $" + shaft*price*inst + "<br><br>The total estimated " + 
+							"cost of this project is $" + ((shaft*price) + (shaft*price*inst)) + ".00."
+							);
 						} else {
 							$("#labelresquote").text("We need the number of basements that are planned for your residential building. Input must be a positive integer.");
 						} 
@@ -664,8 +684,6 @@
 				} else {
 					$("#labelresquote").text("We need the number of apartments that are planned for your residential building. Input must be a positive integer."); 
 				}
-  				
-
 				//check values
 				console.log("apt = " + apt + "flr = " + flr + "bs = " + bs + "res = " + res + "avg = " + avg + "shaft = " + shaft + "col = " + col);
 			};
