@@ -315,8 +315,8 @@
 
 			
 		<div id="resform" class="container"><!-- Residential Form -->
-			<form >
-				<div > <!--Residential Number Inputs - #building-type -->
+			<form id="resform">
+				<div > <!--Residential Number Inputs -->
 					<div class="row">
 						<label for="aptnum">Number of Apartments *</label>
 						<input required type="number" min="1"  value="0" class="form-control" name="aptnum" id="aptnum">
@@ -332,6 +332,25 @@
 				</div><br>
 
 				<div class="row">
+					<div class="col-md-4"><!--Radio Buttons  -->
+						<input type="radio" id="productChoice1"
+						name="resproduct" value="Standard">
+						<label for="productChoice1">Standard</label>
+					
+						<input type="radio" id="productChoice2"
+						name="resproduct" value="Premium">
+						<label for="productChoice2">Premium</label>
+					
+						<input type="radio" id="productChoice3"
+						name="resproduct" value="Excelium" checked>
+						<label for="productChoice3">Excelium</label>
+					</div> <!--/Radio Buttons  -->
+				
+					<div class="col-md-4"><!--The Quote -->
+
+					</div><!--/The Quote -->
+				</div>
+				<div class="row">
 					<div class="col-md-12">
 						<button id="resquote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
 					</div>
@@ -340,7 +359,7 @@
 		</div><!-- /Residential Form -->
 
 		<div id="comform" class="container">
-			<form >
+			<form id="comform">
 				<div> <!--Commercial Number Inputs - #building-type -->
 					<div class="row">
 						<label for="combiz">Number of Distinct Businesses *</label>
@@ -364,6 +383,26 @@
 					</div><br>
 
 					<div class="row">
+						<div class="col-md-4"><!--Radio Buttons  -->
+							<input type="radio" id="productChoice1"
+							name="comproduct" value="Standard">
+							<label for="productChoice1">Standard</label>
+						
+							<input type="radio" id="productChoice2"
+							name="comproduct" value="Premium">
+							<label for="productChoice2">Premium</label>
+						
+							<input type="radio" id="productChoice3"
+							name="comproduct" value="Excelium" checked>
+							<label for="productChoice3">Excelium</label>
+						</div> <!--/Radio Buttons  -->
+					
+						<div class="col-md-4"><!--The Quote -->
+	
+						</div><!--/The Quote -->
+					</div>
+
+					<div class="row">
 						<div class="col-md-12">
 							<button id="comquote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
 						</div>
@@ -373,7 +412,7 @@
 		</div>
 
 		<div id="corform" class="container">
-			<form >
+			<form id="corform">
 				<div > <!--Corpercial Number Inputs - #building-type -->
 					<div class="row">
 						<label for="corbiz">Number of Seperate Tenet Companies *</label>
@@ -394,7 +433,28 @@
 					<div class="row">
 						<label for="cormax">The Maximum Number of Occupants per Floor *</label>
 						<input required type="number" min="1"  value="0" class="form-control" name="cormax" id="cormax">
-					</div><br>
+					</div>
+					<br>
+
+					<div class="row">
+						<div class="col-md-4"><!--Radio Buttons  -->
+							<input type="radio" id="productChoice1"
+							name="corproduct" value="Standard">
+							<label for="productChoice1">Standard</label>
+						
+							<input type="radio" id="productChoice2"
+							name="corproduct" value="Premium">
+							<label for="productChoice2">Premium</label>
+						
+							<input type="radio" id="productChoice3"
+							name="corproduct" value="Excelium" checked>
+							<label for="productChoice3">Excelium</label>
+						</div> <!--/Radio Buttons  -->
+					
+						<div class="col-md-4"><!--The Quote -->
+	
+						</div><!--/The Quote -->
+					</div>
 
 					<div class="row">
 						<div class="col-md-12">
@@ -406,7 +466,7 @@
 		</div>
 
 		<div id="hybform" class="container">
-			<form >
+			<form id="hybform">
 				<div > <!--Corpercial Number Inputs - #building-type -->
 					<div class="row">
 						<label for="hybbiz">Number of Distinct Businesses *</label>
@@ -432,6 +492,26 @@
 						<label for="hybhrs">Max Daily Hours of Activity in the Building *</label>
 						<input required type="number" max="24" min="1"  value="0" class="form-control" name="hybhrs" id="hybhrs">
 					</div><br>
+
+					<div class="row">
+						<div class="col-md-4"><!--Radio Buttons  -->
+							<input type="radio" id="productChoice1"
+							name="hybproduct" value="Standard">
+							<label for="productChoice1">Standard</label>
+						
+							<input type="radio" id="productChoice2"
+							name="hybproduct" value="Premium">
+							<label for="productChoice2">Premium</label>
+						
+							<input type="radio" id="productChoice3"
+							name="hybproduct" value="Excelium" checked>
+							<label for="productChoice3">Excelium</label>
+						</div> <!--/Radio Buttons  -->
+					
+						<div class="col-md-4"><!--The Quote -->
+	
+						</div><!--/The Quote -->
+					</div>
 
 					<div class="row">
 						<div class="col-md-12">
@@ -530,18 +610,90 @@
 		<script> // My new JS Code goes here
 			//
 			var res = function() {
-				
+				//establish jQuery collections
+				var $aptnum = $("#aptnum");
+				var $flrnum = $("#flrnum");
+				var $bsnum = $("#bsnum");
+				var $resproduct = $("#resproduct");
+
+				//pass values of jQuery collection to value
+				var apt = $aptnum.val();
+				var flr = $flrnum.val();
+				var bs = $bsnum.val();
+				var res = $('input[name=resproduct]:checked', '#resform').val()
+  				
+
+				//check values
+				console.log("apt = " + apt + "flr = " + flr + "bs = " + bs + "res = " + res);
 			};
 
 			var com = function() {
+				//establish jQuery collections
+				var $combiz = $("#combiz");
+				var $comflrs = $("#comflrs");
+				var $combs = $("#combs");
+				var $comspcs = $("#comspcs");
+				var $comcgs = $("#comcgs");
+				var $comproduct = $("#comproduct");
 
+				//pass values of jQuery collection to value
+				var biz = $combiz.val();
+				var flr = $comflrs.val();
+				var bs = $combs.val();
+				var spcs = $comspcs.val();
+				var cgs = $comcgs.val();
+				var com = $('input[name=comproduct]:checked', '#comform').val()
+  				
+
+				//check values
+				console.log("biz = " + biz + "flr = " + flr + "bs = " + bs + "spcs = " + spcs + "cgs = " + cgs + "com = " + com);
 			};
 
 			var cor = function() {
 
+				//establish jQuery collections
+				var $corbiz = $("#corbiz");
+				var $corflrs = $("#corflrs");
+				var $corbs = $("#corbs");
+				var $corspcs = $("corspcs");
+				var $cormax = $("#cormax");
+				var $corproduct = $("#corproduct");
+
+				//pass values of jQuery collection to value
+				var biz = $corbiz.val();
+				var flr = $corflrs.val();
+				var bs = $corbs.val();
+				var spcs = $corspcs.val();
+				var max = $cormax.val();
+				var cor = $('input[name=corproduct]:checked', '#corform').val()
+  				
+
+				//check values
+				console.log("biz = " + biz + "flr = " + flr + "bs = " + bs + "spcs = " + spcs + "max = " + max + "cor = " + cor);
 			};
 
 			var hyb = function() {
+				//establish jQuery collections
+				var $hybbiz = $("#hybbiz");
+				var $hybflrs = $("#hybflrs");
+				var $hybbs = $("#hybbs");
+				var $hybspcs = $("hybspcs");
+				var $hybmax = $("#hybmax");
+				var $hybhrs = $("#hybhrs");
+				var $hybproduct = $("#hybproduct");
+
+				//pass values of jQuery collection to value
+				var biz = $hybbiz.val();
+				var flr = $hybflrs.val();
+				var bs = $hybbs.val();
+				var spcs = $hybspcs.val();
+				var max = $hybmax.val();
+				var hrs = $hybhrs.val();
+				var hyb = $('input[name=hybproduct]:checked', '#hybform').val()
+  				
+
+				//check values
+				console.log("biz = " + biz + "flr = " + flr + "bs = " + bs + "spcs = " + spcs + "max = " + max + "hrs = " + hrs + "hyb = " + hyb);
 
 			};
 
@@ -587,11 +739,28 @@
 
     		});
 
-			$("#resquote").on("submit", function(event) {
-				event.preventDefault();
-				var numapartments = $("#aptnum");
-				var apts = numapartments.val();
-				console.log(apts);				
+			$("#resquote").on("click", function(event) {
+				res();
+
+				event.preventDefault();			
+			});
+
+			$("#comquote").on("click", function(event) {
+				com();
+
+				event.preventDefault();					
+			});
+
+			$("#corquote").on("click", function(event) {
+				cor();
+
+				event.preventDefault();			
+			});
+
+			$("#hybquote").on("click", function(event) {
+				hyb();
+
+				event.preventDefault();				
 			});
 			
 			//End My new JS Code here.	</script> 
