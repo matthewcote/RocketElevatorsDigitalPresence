@@ -348,8 +348,6 @@
 					
 					<div class="col-md-8">
 						<p id="labelresquote"></p>
-						<p id="labelresquote2"></p>
-
 					</div>
 					
 					
@@ -403,9 +401,9 @@
 							<label for="productChoice3">Excelium</label>
 						</div> <!--/Radio Buttons  -->
 					
-						<div class="col-md-4"><!--The Quote -->
-							<label id="labelcomquote"></label>
-						</div><!--/The Quote -->
+						<div class="col-md-8">
+							<p id="labelcomquote"></p>
+						</div>
 					</div>
 
 					<div class="row">
@@ -457,9 +455,9 @@
 							<label for="productChoice3">Excelium</label>
 						</div> <!--/Radio Buttons  -->
 					
-						<div class="col-md-4"><!--The Quote -->
-							<label id="labelcorquote"></label>
-						</div><!--/The Quote -->
+						<div class="col-md-8">
+							<p id="labelcorquote"></p>
+						</div>
 					</div>
 
 					<div class="row">
@@ -639,7 +637,21 @@
 
 				return inst;
 			}
-			
+
+			var plural = function(num, message){
+				var x;
+				if (num === 1){
+					x = "1 ";
+					message = x + message;
+					return message;
+				}
+				if (num > 1){
+					x = num + " ";
+					message = x + message + "s";
+					return message;
+				}
+			}
+
 			var res = function() {
 				//establish jQuery collections
 				var $aptnum = $("#aptnum");
@@ -659,7 +671,12 @@
 				var col = Math.ceil(flr/20);
 				shaft = shafts * col;
 				var inst = install(price);
-				
+				var x = shaft*price*inst;
+				var y = shaft*price;
+				x.toFixed(2);
+				y.toFixed(2);
+				z = x + y;
+
 
 				//call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
 				if (verify(apt)){
@@ -668,12 +685,12 @@
 						console.log("flr = true");
 						if (verify(bs)){
 							console.log("bs = true");
-							$("#labelresquote").html("Based on your input, your proposed building should need " + col + 
-							" columns. Each column will need " + shafts + " elevator shafts. For a total of " + 
-							shaft + " elevators shafts.<br><br>The price of each " + res + " elevator is " + "$" + price + 
-							".00.<br>" + shaft + " elevators X $" + price + ".00 = $" + shaft*price + ".00.<br>" +
-							"The installation fee is " + inst*100 + "%  - - $" + shaft*price*inst + "<br><br>The total estimated " + 
-							"cost of this project is $" + ((shaft*price) + (shaft*price*inst)) + ".00."
+							$("#labelresquote").html("Based on your input, your proposed building should need " + plural(col, "column")  + 
+							 ". Each column will need " + plural(shafts, "elevator shaft") +  ". For a total of " + plural(shaft, "elevator shaft") + 
+							  ".<br><br>The price of each " + res + " elevator is " + "$" + price + 
+							".00<br>" + plural(shaft, "elevator shaft") +  " X $" + price + ".00 = $" + shaft*price + ".00<br>" +
+							"The installation fee is " + inst*100 + "%  =  $" + x.toFixed(2) + "<br><br>The total estimated " + 
+							"cost of this project is $" + z.toFixed(2)
 							);
 						} else {
 							$("#labelresquote").text("We need the number of basements that are planned for your residential building. Input must be a positive integer.");
@@ -707,11 +724,14 @@
 				var cgs = Number($comcgs.val());
 				var com = $('input[name=comproduct]:checked', '#comform').val();
 				var price = service(com);
-				
-				
+				var inst = install(price);
+				var x = cgs * price * inst;
+				var y = cgs * price;
+				x.toFixed(2);
+				y.toFixed(2);
+				z = x + y;
 
-				var service = 0;
-
+				
 
 				//call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
 				if (verify(biz)){
@@ -724,7 +744,12 @@
 								console.log("spcs = true");
 								if (verify(cgs)){
 								console.log("max = true");
-								$("#labelcomquote").text("success");
+								$("#labelcomquote").html("Based on your input, your proposed building should need " + plural(cgs, "elevator") + ".<br><br>" +
+								"The price of each " + com + " elevator is " + "$" + price + 
+								".00<br>" + plural(cgs, "elevator shaft") +  " X $" + price + ".00 = $" + y.toFixed(2) + "<br>" +
+								"The installation fee is " + inst*100 + "%  =  $" + x.toFixed(2) + "<br><br>The total estimated " + 
+								"cost of this project is $" + z.toFixed(2) 
+								);
 
 								} else {
 									$("#labelcomquote").text("We need the number of elevator cages that are planned for your commercial building. Input must be a positive integer.");
