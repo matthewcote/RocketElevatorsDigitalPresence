@@ -1,6 +1,7 @@
 
 // Utilitiy Functions
 
+    
 var verify = function(val){ // returns true if number is valid, false if number is invalid
     if (val === 0) {return false;}
     if (val <= 0) {return false;}
@@ -62,9 +63,15 @@ var res = function() { //does everything else
     var inst = install(price);
     var x = shaft*price*inst;
     var y = shaft*price;
-    x.toFixed(2);
-    y.toFixed(2);
-    z = x + y;
+    var z = x + y;
+    //code sourced from stack overflow https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
+    x = (x).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    y = (y).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    z = (z).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    price = (price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    //code sourced from stack overflow https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
+
+    
 
 
     //call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
@@ -77,9 +84,9 @@ var res = function() { //does everything else
                 $("#labelresquote").html("Based on your input, your proposed building should need " + plural(col, "column")  + 
                  ". Each column will need " + plural(shafts, "elevator shaft") +  ". For a total of " + plural(shaft, "elevator shaft") + 
                   ".<br><br>The price of each " + res + " elevator is " + "$" + price + 
-                ".00<br>" + plural(shaft, "elevator shaft") +  " X $" + price + ".00 = $" + shaft*price + ".00<br>" +
-                "The installation fee is " + inst*100 + "%  =  $" + x.toFixed(2) + "<br><br>The total estimated " + 
-                "cost of this project is $" + z.toFixed(2)
+                "<br>" + plural(shaft, "elevator shaft") +  " X $" + price + " = $" + y + "<br>" +
+                "The installation fee is " + inst*100 + "%  =  $" + x + "<br><br>The total estimated " + 
+                "cost of this project is $" + z
                 );
             } else {
                 $("#labelresquote").text("We need the number of basements that are planned for your residential building. Input must be a positive integer.");
@@ -116,9 +123,13 @@ var com = function() { //does everything else
     var inst = install(price);
     var x = cgs * price * inst;
     var y = cgs * price;
-    x.toFixed(2);
-    y.toFixed(2);
     z = x + y;
+    //code sourced from stack overflow https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
+    x = (x).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    y = (y).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    z = (z).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    price = (price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    //code sourced from stack overflow https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
 
     
 
@@ -135,9 +146,9 @@ var com = function() { //does everything else
                     console.log("max = true");
                     $("#labelcomquote").html("Based on your input, your proposed building should need " + plural(cgs, "elevator") + ".<br><br>" +
                     "The price of each " + com + " elevator is " + "$" + price + 
-                    ".00<br>" + plural(cgs, "elevator shaft") +  " X $" + price + ".00 = $" + y.toFixed(2) + "<br>" +
-                    "The installation fee is " + inst*100 + "%  =  $" + x.toFixed(2) + "<br><br>The total estimated " + 
-                    "cost of this project is $" + z.toFixed(2) 
+                    "<br>" + plural(cgs, "elevator shaft") +  " X $" + price + " = $" + y + "<br>" +
+                    "The installation fee is " + inst*100 + "%  =  $" + x + "<br><br>The total estimated " + 
+                    "cost of this project is $" + z
                     );
 
                     } else {
@@ -184,10 +195,14 @@ var cor = function() { //does everything else
     var inst = install(price);
     var x = cgs * price * inst;
     var y = cgs * price;
-    x.toFixed(2);
-    y.toFixed(2);
     z = x + y;
-    
+
+    //code sourced from stack overflow https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
+    x = (x).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    y = (y).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    z = (z).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    price = (price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    //code sourced from stack overflow https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
 
     //call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
     if (verify(biz)){
@@ -202,9 +217,9 @@ var cor = function() { //does everything else
                     console.log("max = true");
                     $("#labelcorquote").html("Based on your input, your proposed building should need " + plural(cgs, "elevator") + ".<br><br>" +
                     "The price of each " + cor + " elevator is " + "$" + price + 
-                    ".00<br>" + plural(cgs, "elevator shaft") +  " X $" + price + ".00 = $" + y.toFixed(2) + "<br>" +
-                    "The installation fee is " + inst*100 + "%  =  $" + x.toFixed(2) + "<br><br>The total estimated " + 
-                    "cost of this project is $" + z.toFixed(2) 
+                    "<br>" + plural(cgs, "elevator shaft") +  " X $" + price + " = $" + y + "<br>" +
+                    "The installation fee is " + inst*100 + "%  =  $" + x + "<br><br>The total estimated " + 
+                    "cost of this project is $" + z
                     );
                     } else {
                         $("#labelcorquote").text("We need the maximum number of occupants per floor that are planned for your corporate building. Input must be a positive integer.");
@@ -222,7 +237,6 @@ var cor = function() { //does everything else
         $("#labelcorquote").text("We need the number of distinct businesses that are planned for your corporate building. Input must be a positive integer."); 
     }
       
-
     //check values
     console.log("biz = " + biz + "flr = " + flr + "bs = " + bs + "spcs = " + spcs + "max = " + max + "cor = " + cor);
 };
@@ -250,9 +264,14 @@ var hyb = function() { //does everything else
     var inst = install(price);
     var x = cgs * price * inst;
     var y = cgs * price;
-    x.toFixed(2);
-    y.toFixed(2);
     z = x + y;
+    //code sourced from stack overflow https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
+    x = (x).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    y = (y).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    z = (z).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    price = (price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    //code sourced from stack overflow https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
+
                     
     //call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
     if (verify(biz)){
@@ -269,9 +288,9 @@ var hyb = function() { //does everything else
                             console.log("hrs = true");
                             $("#labelhybquote").html("Based on your input, your proposed building should need " + plural(cgs, "elevator") + ".<br><br>" +
                             "The price of each " + hyb + " elevator is " + "$" + price + 
-                            ".00<br>" + plural(cgs, "elevator shaft") +  " X $" + price + ".00 = $" + y.toFixed(2) + "<br>" +
-                            "The installation fee is " + inst*100 + "%  =  $" + x.toFixed(2) + "<br><br>The total estimated " + 
-                            "cost of this project is $" + z.toFixed(2) 
+                            "<br>" + plural(cgs, "elevator shaft") +  " X $" + price + " = $" + y + "<br>" +
+                            "The installation fee is " + inst*100 + "%  =  $" + x + "<br><br>The total estimated " + 
+                            "cost of this project is $" + z
                             );
                         } else {
                             $("#labelhybquote").text("We need the number of hours of activity that are planned for your hybrid building. Input must be a positive integer between 1 and 24 inclusive.");
