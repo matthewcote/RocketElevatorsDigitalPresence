@@ -26,7 +26,7 @@
 				// SET DEFAULT VALUES OF ITEM //
 				////////////////////////////////
 				var defaults = {
-					delay:9000,
+					delay:7000,
 					startheight:500,
 					startwidth:960,
 					fullScreenAlignForce:"off",
@@ -68,7 +68,7 @@
 					keyboardNavigation:"on",
 
 					touchenabled:"on",						// Enable Swipe Function : on/off
-					onHoverStop:"on",						// Stop Banner Timet at Hover on Slide on/off
+					onHoverStop:"off",						// Stop Banner Timet at Hover on Slide on/off
 
 
 					stopAtSlide:-1,							// Stop Timer if Slide "x" has been Reached. If stopAfterLoops set to 0, then it stops already in the first Loop at slide X which defined. -1 means do not stop at any slide. stopAfterLoops has no sinn in this case.

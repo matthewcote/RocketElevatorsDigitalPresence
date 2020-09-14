@@ -51,7 +51,7 @@ jQuery(document).ready(function() {
 		// Init Revolution Slider
 		revapi = jQuery('.fullwidthbanner').revolution({
 			dottedOverlay:"none",
-			delay:9000,
+			delay: 7000,
 			startwidth:1170,
 			startheight: jQuery(".fullwidthbanner").attr('data-height') || 500,
 			hideThumbs:hideThumbs,
@@ -65,7 +65,7 @@ jQuery(document).ready(function() {
 			navigationStyle:jQuery('.fullwidthbanner').attr('data-navigationStyle') || "round", // round,square,navbar,round-old,square-old,navbar-old (see docu - choose between 50+ different item)
 
 			touchenabled:"on",
-			onHoverStop:"on",
+			onHoverStop:"off",
 
 			navigationHAlign:"center",
 			navigationVAlign:"bottom",
@@ -112,8 +112,6 @@ jQuery(document).ready(function() {
 			fullScreenOffsetContainer: ""
 		});
 
-		// Used by styleswitcher onle - delete this on production!
-		jQuery("#is_wide, #is_boxed").bind("click", function() { revapi.revredraw(); });
 	}
 
 
@@ -173,7 +171,7 @@ jQuery(document).ready(function() {
 					soloArrowRightVOffset:0,
 
 					parallax:"mouse",
-					parallaxBgFreeze:"on",
+					parallaxBgFreeze:"off",
 					parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
 
 					shadow: parseInt(_shadow),

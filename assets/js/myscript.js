@@ -1,7 +1,6 @@
 
 // Utilitiy Functions
 
-    
 var verify = function(val){ // returns true if number is valid, false if number is invalid
     if (val === 0) {return false;}
     if (val <= 0) {return false;}
