@@ -5,6 +5,7 @@
 		<title>Rocket Elevators - Request a Quote Form</title>
 		<meta name="description" content="" />
 		<meta name="Author" content="Matthew Cote" />
+		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
@@ -35,27 +36,6 @@
 		</style>
 	</head>
 
-	<!--
-		AVAILABLE BODY CLASSES:
-		
-		smoothscroll 			= create a browser smooth scroll
-		enable-animation		= enable WOW animations
-
-		bg-grey					= grey background
-		grain-grey				= grey grain background
-		grain-blue				= blue grain background
-		grain-green				= green grain background
-		grain-blue				= blue grain background
-		grain-orange			= orange grain background
-		grain-yellow			= yellow grain background
-		
-		boxed 					= boxed layout
-		pattern1 ... patern11	= pattern background
-		menu-vertical-hide		= hidden, open on click
-		
-		BACKGROUND IMAGE [together with .boxed class]
-		data-background="assets/images/_smarty/boxed_background/1.jpg"
-	-->
 	<body class="enable-animation">
 
 		<!-- SLIDE TOP // OPTIONAL - done for now -->
@@ -95,7 +75,6 @@
 		</div>
 		<!-- /SLIDE TOP -->
 
-
 		<!-- wrapper -->
 		<div id="wrapper">
 
@@ -125,21 +104,9 @@
 								<img src="logoimages/R2.png" alt="" />     
 							</a>
 	
-							<!-- Top Nav 	
-								AVAILABLE CLASSES:
-								submenu-dark = dark sub menu
-							-->
 							<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
 								<nav class="nav-main">
-	
-									<!-- 
-										.nav-onepage
-										Required for onepage navigation links
-										
-	
-	
-										Add .external for an external link!
-									-->
+
 									<ul id="topMain" class="nav nav-pills nav-main nav-hover-animate nav-animate-fadeIn nav-onepage.external">
 										<li class="active"><!-- HOME 1  --added, Matthew Cote  - changed href to top from home-->
 											<a href="index.html"> 
@@ -158,8 +125,8 @@
 													</a>
 												</li>
 												<li>
-													<a href="rocket_commercial.html">
-														Commercial Services
+													<a href="rocket_corporate.html">
+														Corporate Services
 													</a>
 												</li>
 												<li>
@@ -244,25 +211,14 @@
 												NEWS
 											</a>
 										</li>
-										
-										<!--<li> OVERVIEW
-											<a href="#overview">
-												OVERVIEW added, Matthew Cote
-											</a>
-										</li>-->
+
 	
 										<li><!-- CLIENTS 5-->
 											<a href="index.html#clients">
 												CLIENTS
 											</a>
 										</li>
-										<!--
-										<li>  BLOG 
-											<a class="external" href="blog-default-aside-left.html">
-												BLOG added, Matthew Cote
-											</a>
-										</li>
-									-->
+
 										<li><!-- CONTACT 6-->
 											<a href="index.html#contacts">
 												CONTACT
@@ -278,7 +234,8 @@
 				<!-- /Top Nav -->			
 			</div> <!-- /HEADER -->
 		
-			<section id="Request a Quote">
+			<!-- Request a Quote Section Header and Building Type Selector -->
+			<section id="Request a Quote"> 
 				<div class="container">
 
 					<header class="text-center mb-60">
@@ -311,231 +268,200 @@
 	
 					
 				</div>
-			</section>
-			<!-- /CONTACT -->
-
+			</section> <!-- /Request a Quote Section Header and Building Type Selector -->		
 			
-		<div id="resform" class="container"><!-- Residential Form -->
-			<form id="resform">
-				<div > <!--Residential Number Inputs -->
-					<div class="row">
-						<label for="aptnum">Number of Apartments *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="aptnum" id="aptnum">
-					</div>
-					<div class="row">
-						<label for="flrnum">Number of Floors *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="flrnum" id="flrnum">
-					</div>
-					<div class="row">
-						<label for="bsnum" for="aptnum">Number of Basements *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="bsnum" id="bsnum">
-					</div>
-				</div><br>
-
-				<div class="row"><!--Radio Buttons and Quote Label Row -->
-					<div class="col-md-2">
-						<input type="radio" id="productChoice1"
-						name="resproduct" value="Standard">
-						<label for="productChoice1">Standard</label>
-					
-						<input type="radio" id="productChoice2"
-						name="resproduct" value="Premium">
-						<label for="productChoice2">Premium</label>
-					
-						<input type="radio" id="productChoice3"
-						name="resproduct" value="Excelium" checked>
-						<label for="productChoice3">Excelium</label>
-					</div> <!--/Radio Buttons  -->
-					
-					<div class="col-md-8">
-						<p id="labelresquote"></p>
-					</div>
-					
-				</div>
-				<!--/ Button I no longer use, 
-				<div class="row">
-					<div class="col-md-12">
-						<button id="resquote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
-					</div>
-				</div>
-				-->
-			</form>
-		</div><!-- /Residential Form -->
-
-		<div id="comform" class="container">
-			<form id="comform">
-				<div> <!--Commercial Number Inputs - #building-type -->
-					<div class="row">
-						<label for="combiz">Number of Distinct Businesses *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="combiz" id="combiz">
-					</div>
-					<div class="row">
-						<label for="comflrs">Number of Floors *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="comflrs" id="comflrs">
-					</div>
-					<div class="row">
-						<label for="combs">Number of Basements *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="combs" id="combs">
-					</div>
-					<div class="row">
-						<label for="comspcs">Number of Parking Spaces *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="comspcs" id="comspcs">
-					</div>
-					<div class="row">
-						<label for="comcgs">Number of Elevator Cages to be deployed *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="comcgs" id="comcgs">
+			<div id="resform" class="container"><!-- Residential Form -->
+				<form id="resform">
+					<div > <!--Residential Number Inputs -->
+						<div class="row">
+							<label for="aptnum">Number of Apartments *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="aptnum" id="aptnum">
+						</div>
+						<div class="row">
+							<label for="flrnum">Number of Floors *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="flrnum" id="flrnum">
+						</div>
+						<div class="row">
+							<label for="bsnum" for="aptnum">Number of Basements *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="bsnum" id="bsnum">
+						</div>
 					</div><br>
 
-					<div class="row">
-						<div class="col-md-4"><!--Radio Buttons  -->
+					<div class="row"><!--Radio Buttons and Quote Label Row -->
+						<div class="col-md-2">
 							<input type="radio" id="productChoice1"
-							name="comproduct" value="Standard">
+							name="resproduct" value="Standard">
 							<label for="productChoice1">Standard</label>
 						
 							<input type="radio" id="productChoice2"
-							name="comproduct" value="Premium">
+							name="resproduct" value="Premium">
 							<label for="productChoice2">Premium</label>
 						
 							<input type="radio" id="productChoice3"
-							name="comproduct" value="Excelium" checked>
+							name="resproduct" value="Excelium" checked>
 							<label for="productChoice3">Excelium</label>
 						</div> <!--/Radio Buttons  -->
-					
+						
 						<div class="col-md-8">
-							<p id="labelcomquote"></p>
+							<p id="labelresquote"></p>
 						</div>
-					</div>
-					<!--/ Button I no longer use, 
-					<div class="row">
-						<div class="col-md-12">
-							<button id="comquote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
-						</div>
-					</div>
-					-->
-				</div>
-			</form>
-		</div>
-
-		<div id="corform" class="container">
-			<form id="corform">
-				<div > <!--Corpercial Number Inputs - #building-type -->
-					<div class="row">
-						<label for="corbiz">Number of Seperate Tenet Companies *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="corbiz" id="corbiz">
-					</div>
-					<div class="row">
-						<label for="corflrs">Number of Floors *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="corflrs" id="corflrs">
-					</div>
-					<div class="row">
-						<label for="corbz">Number of Basements *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="corbs" id="corbs">
-					</div>
-					<div class="row">
-						<label for="corspcs">Number of Parking Spaces *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="corspcs" id="corspcs">
-					</div>
-					<div class="row">
-						<label for="cormax">The Maximum Number of Occupants per Floor *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="cormax" id="cormax">
-					</div>
-					<br>
-
-					<div class="row">
-						<div class="col-md-4"><!--Radio Buttons  -->
-							<input type="radio" id="productChoice1"
-							name="corproduct" value="Standard">
-							<label for="productChoice1">Standard</label>
 						
-							<input type="radio" id="productChoice2"
-							name="corproduct" value="Premium">
-							<label for="productChoice2">Premium</label>
-						
-							<input type="radio" id="productChoice3"
-							name="corproduct" value="Excelium" checked>
-							<label for="productChoice3">Excelium</label>
-						</div> <!--/Radio Buttons  -->
-					
-						<div class="col-md-8">
-							<p id="labelcorquote"></p>
+					</div>
+
+				</form>
+			</div><!-- /Residential Form -->
+
+			<div id="comform" class="container">
+				<form id="comform">
+					<div> <!--Commercial Number Inputs - #building-type -->
+						<div class="row">
+							<label for="combiz">Number of Distinct Businesses *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="combiz" id="combiz">
 						</div>
-					</div>
-					<!--/ Button I no longer use, 
-					<div class="row">
-						<div class="col-md-12">
-							<button id="corquote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
+						<div class="row">
+							<label for="comflrs">Number of Floors *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="comflrs" id="comflrs">
 						</div>
-					</div>
-					-->
-				</div>
-			</form>
-		</div>
-
-		<div id="hybform" class="container">		
-			<form id="hybform">
-				<div > <!--Corpercial Number Inputs - #building-type -->
-					<div class="row">
-						<label for="hybbiz">Number of Distinct Businesses *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="hybbiz" id="hybbiz">
-					</div>
-					<div class="row">
-						<label for="hybflrs">Number of Floors *</label>
-						<input required type="number"  min="1"  value="0" class="form-control" name="hybflrs" id="hybflrs">
-					</div>
-					<div class="row">
-						<label for="hybbs">Number of Basements *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="hybbs" id="hybbs">
-					</div>
-					<div class="row">
-						<label for="hybspcs">Number of Parking Spaces *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="hybspcs" id="hybspcs">
-					</div>
-					<div class="row">
-						<label for="hybmax">The Maximum Number of Occupants per Floor *</label>
-						<input required type="number" min="1"  value="0" class="form-control" name="hybmax" id="hybmax">
-					</div>
-					<div class="row">
-						<label for="hybhrs">Max Daily Hours of Activity in the Building *</label>
-						<input required type="number" max="24" min="1"  value="0" class="form-control" name="hybhrs" id="hybhrs">
-					</div><br>
-
-					<div class="row">
-						<div class="col-md-4"><!--Radio Buttons  -->
-							<input type="radio" id="productChoice1"
-							name="hybproduct" value="Standard">
-							<label for="productChoice1">Standard</label>
-						
-							<input type="radio" id="productChoice2"
-							name="hybproduct" value="Premium">
-							<label for="productChoice2">Premium</label>
-						
-							<input type="radio" id="productChoice3"
-							name="hybproduct" value="Excelium" checked>
-							<label for="productChoice3">Excelium</label>
-						</div> <!--/Radio Buttons  -->
-					
-						<div class="col-md-6"><!--The Quote -->
-							<label id="labelhybquote">
-							</label>
-						</div><!--/The Quote -->
-					</div>
-					<!--/ Button I no longer use,
-					<div class="row">
-						<div class="col-md-12">
-							<button id="hybquote" class="form-control btn btn-primary"><i class="fa fa-check"></i> Request a Quote</button>
+						<div class="row">
+							<label for="combs">Number of Basements *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="combs" id="combs">
 						</div>
-					-->
-					
-				</div>
-			</form>
-		</div>
+						<div class="row">
+							<label for="comspcs">Number of Parking Spaces *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="comspcs" id="comspcs">
+						</div>
+						<div class="row">
+							<label for="comcgs">Number of Elevator Cages to be deployed *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="comcgs" id="comcgs">
+						</div><br>
 
+						<div class="row">
+							<div class="col-md-4"><!--Radio Buttons  -->
+								<input type="radio" id="productChoice1"
+								name="comproduct" value="Standard">
+								<label for="productChoice1">Standard</label>
+							
+								<input type="radio" id="productChoice2"
+								name="comproduct" value="Premium">
+								<label for="productChoice2">Premium</label>
+							
+								<input type="radio" id="productChoice3"
+								name="comproduct" value="Excelium" checked>
+								<label for="productChoice3">Excelium</label>
+							</div> <!--/Radio Buttons  -->
+						
+							<div class="col-md-8">
+								<p id="labelcomquote"></p>
+							</div>
+						</div>
 
-			<!-- FOOTER - DONE
-            -- added, Matthew Cote
-                        § The footer section already in place in the model must be implemented with real content but can remain in the format 
-                        and according to the layout proposed by the model.
-            -->
+					</div>
+				</form>
+			</div>
+
+			<div id="corform" class="container">
+				<form id="corform">
+					<div > <!--Corpercial Number Inputs - #building-type -->
+						<div class="row">
+							<label for="corbiz">Number of Seperate Tenet Companies *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="corbiz" id="corbiz">
+						</div>
+						<div class="row">
+							<label for="corflrs">Number of Floors *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="corflrs" id="corflrs">
+						</div>
+						<div class="row">
+							<label for="corbz">Number of Basements *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="corbs" id="corbs">
+						</div>
+						<div class="row">
+							<label for="corspcs">Number of Parking Spaces *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="corspcs" id="corspcs">
+						</div>
+						<div class="row">
+							<label for="cormax">The Maximum Number of Occupants per Floor *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="cormax" id="cormax">
+						</div>
+						<br>
+
+						<div class="row">
+							<div class="col-md-4"><!--Radio Buttons  -->
+								<input type="radio" id="productChoice1"
+								name="corproduct" value="Standard">
+								<label for="productChoice1">Standard</label>
+							
+								<input type="radio" id="productChoice2"
+								name="corproduct" value="Premium">
+								<label for="productChoice2">Premium</label>
+							
+								<input type="radio" id="productChoice3"
+								name="corproduct" value="Excelium" checked>
+								<label for="productChoice3">Excelium</label>
+							</div> <!--/Radio Buttons  -->
+						
+							<div class="col-md-8">
+								<p id="labelcorquote"></p>
+							</div>
+						</div>
+
+					</div>
+				</form>
+			</div>
+
+			<div id="hybform" class="container">		
+				<form id="hybform">
+					<div > <!--Corpercial Number Inputs - #building-type -->
+						<div class="row">
+							<label for="hybbiz">Number of Distinct Businesses *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="hybbiz" id="hybbiz">
+						</div>
+						<div class="row">
+							<label for="hybflrs">Number of Floors *</label>
+							<input required type="number"  min="1"  value="0" class="form-control" name="hybflrs" id="hybflrs">
+						</div>
+						<div class="row">
+							<label for="hybbs">Number of Basements *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="hybbs" id="hybbs">
+						</div>
+						<div class="row">
+							<label for="hybspcs">Number of Parking Spaces *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="hybspcs" id="hybspcs">
+						</div>
+						<div class="row">
+							<label for="hybmax">The Maximum Number of Occupants per Floor *</label>
+							<input required type="number" min="1"  value="0" class="form-control" name="hybmax" id="hybmax">
+						</div>
+						<div class="row">
+							<label for="hybhrs">Max Daily Hours of Activity in the Building *</label>
+							<input required type="number" max="24" min="1"  value="0" class="form-control" name="hybhrs" id="hybhrs">
+						</div><br>
+
+						<div class="row">
+							<div class="col-md-4"><!--Radio Buttons  -->
+								<input type="radio" id="productChoice1"
+								name="hybproduct" value="Standard">
+								<label for="productChoice1">Standard</label>
+							
+								<input type="radio" id="productChoice2"
+								name="hybproduct" value="Premium">
+								<label for="productChoice2">Premium</label>
+							
+								<input type="radio" id="productChoice3"
+								name="hybproduct" value="Excelium" checked>
+								<label for="productChoice3">Excelium</label>
+							</div> <!--/Radio Buttons  -->
+						
+							<div class="col-md-6"><!--The Quote -->
+								<label id="labelhybquote">
+								</label>
+							</div><!--/The Quote -->
+						</div>
+
+					</div>
+				</form>
+			</div>
+			<!-- /wrapper -->
+
 			<footer id="footer">
 				<div class="container">
 					<div class="row">
@@ -543,7 +469,7 @@
 						<!-- col #1 -->
 						<div class="col-md-8">
 
-							<h3 id = "rocketTitle" class="letter-spacing-1">Rocket Elevators - Elevate Safety, Speed and Style</h3>
+							<h3 class="letter-spacing-1">Rocket Elevators - Elevate Safety, Speed and Style</h3>
 
 							<!-- Small Description -->
 							<p>
@@ -594,10 +520,7 @@
 			</footer>
 			<!-- /FOOTER -->
 
-		</div>
-		<!-- /wrapper -->
-
-	
+		</div>	
 		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
 
@@ -607,7 +530,6 @@
 				<span class="loader"></span>
 			</div>
 		</div><!-- /PRELOADER -->
-
 
 		<!-- JAVASCRIPT FILES -->
 		<script>var plugin_path = 'assets/plugins/';</script>
