@@ -62,7 +62,29 @@ var plural = function (num, message) {
 // main functions - collects input, input verification, performs all calculations,presents instructions or results to user. 
 
 var res = function () {
+  
+  /*/
+  $.post("localhost:3003/htmldata", {//Envoi des datas au serveur
+    aptnum: $('#aptnum').val(),
+    flrnum: $('#flrnum').val(),
+    bsnum: $('#bsnum').val()
+    },
+    function(data){//Callback function (data received from server)
+        console.log("Data recieved from server: " + data.result)
+        $("#result").text(data.result + " est le resultat");
+    });
+  */
+
   //
+  $.post("/htmldata", {//Sending data to server
+    apartments: $('#aptnum').val()
+},
+function(data){//Callback function (data received from server)
+    console.log("Data received from server: " + data.result)
+    $("#result").text(data.result + " is the result");
+});
+  //
+
   //establish jQuery collections
   var $aptnum = $("#aptnum");
   var $flrnum = $("#flrnum");
@@ -142,7 +164,19 @@ var res = function () {
 };
 
 var com = function () {
+  
   //
+    //
+    $.post("localhost:3003/htmldata", {//Envoi des datas au serveur
+      cgs: $('#comcgs').val(),
+      },
+      function(data){//Callback function (data received from server)
+          console.log("Data recieved from server: " + data.result)
+          $("#result").text(data.result + " est le resultat");
+      });
+    //
+  //
+
   //establish jQuery collections
   var $combiz = $("#combiz");
   var $comflrs = $("#comflrs");
@@ -232,6 +266,19 @@ var com = function () {
 };
 
 var cor = function () {
+  
+  //
+    //
+    $.post("localhost:3003/htmldata", {//Envoi des datas au serveur
+      cormax: $('#cormax').val(),
+      corflrs: $('#corflrs').val(),
+      corbs: $('#corbs').val()
+      },
+      function(data){//Callback function (data received from server)
+          console.log("Data recieved from server: " + data.result)
+          $("#result").text(data.result + " est le resultat");
+      });
+    //
   //
 
   //establish jQuery collections
@@ -325,7 +372,21 @@ var cor = function () {
 };
 
 var hyb = function () {
+  
   //
+    //
+    $.post("localhost:3003/htmldata", {//Envoi des datas au serveur
+      hybmax: $('#hybmax').val(),
+      flrnum: $('#flrnum').val(),
+      bsnum: $('#bsnum').val()
+      },
+      function(data){//Callback function (data received from server)
+          console.log("Data recieved from server: " + data.result)
+          $("#result").text(data.result + " est le resultat");
+      });
+    //
+  //
+
   //establish jQuery collections
   var $hybbiz = $("#hybbiz");
   var $hybflrs = $("#hybflrs");

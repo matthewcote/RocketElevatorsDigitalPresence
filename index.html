@@ -28,7 +28,12 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
-		<script>window.addEventListener('wheel', { passive: false })</script>
+		<script>
+			window.addEventListener('wheel', { passive: false })
+
+
+		
+		</script>
 	</head>
 
 	<body class="smoothscroll enable-animation">
@@ -1197,7 +1202,7 @@
 				<div class="container">
 
 					<div class="heading-title heading-dotted text-center">
-						<h2>Our Clients</h2>
+						<h2>Our Customers</h2>
 					</div>
 
 					<ul class="row clients-dotted list-inline">
@@ -1306,17 +1311,17 @@
 							</div><!-- /Alert Mandatory -->
 
 
-							<form action="php/contact.php" method="post" enctype="multipart/form-data">
+							<form >
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
 									<div class="row">
 											<div class="col-md-4">
-												<label for="contact:name">Full Name *</label>
+												<label >Full Name *</label>
 												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:name">
                                             </div>
                                             <div class="col-md-4">
-												<label for="contact:businessname">Business Name</label>
+												<label >Business Name</label>
 												<input required type="text" value="" class="form-control" name="contact[businessname]" id="contact:businessname">
                                             </div>
                                     </div>
@@ -1373,7 +1378,7 @@
 
 								<div class="row">
 									<div class="col-md-12">
-										<button id="sendbutton" type="click" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
+										<button  class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
 									</div>
 								</div>
 							</form>
@@ -1485,7 +1490,7 @@
 		<script src="assets/js/view/demo.revolution_slider.js"></script>
 
 		<!-- PAGELEVEL SCRIPTS -->
-		<script src="assets/js/contact.js"></script>
+		
 
 	</body>
 </html>
