@@ -63,28 +63,6 @@ var plural = function (num, message) {
 
 var res = function () {
   
-  /*/
-  $.post("localhost:3003/htmldata", {//Envoi des datas au serveur
-    aptnum: $('#aptnum').val(),
-    flrnum: $('#flrnum').val(),
-    bsnum: $('#bsnum').val()
-    },
-    function(data){//Callback function (data received from server)
-        console.log("Data recieved from server: " + data.result)
-        $("#result").text(data.result + " est le resultat");
-    });
-  */
-
-  //
-  $.post("/htmldata", {//Sending data to server
-    apartments: $('#aptnum').val()
-},
-function(data){//Callback function (data received from server)
-    console.log("Data received from server: " + data.result)
-    $("#result").text(data.result + " is the result");
-});
-  //
-
   //establish jQuery collections
   var $aptnum = $("#aptnum");
   var $flrnum = $("#flrnum");
@@ -114,11 +92,11 @@ function(data){//Callback function (data received from server)
 
   //call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
   if (verify(apt)) {
-    console.log("apt = true");
+   
     if (verify(flr)) {
-      console.log("flr = true");
+      
       if (verify(bs)) {
-        console.log("bs = true");
+        
         $("#labelresquote").html(
           "Based on your input, your proposed building should need " +
             plural(col, "column") +
@@ -164,18 +142,6 @@ function(data){//Callback function (data received from server)
 };
 
 var com = function () {
-  
-  //
-    //
-    $.post("localhost:3003/htmldata", {//Envoi des datas au serveur
-      cgs: $('#comcgs').val(),
-      },
-      function(data){//Callback function (data received from server)
-          console.log("Data recieved from server: " + data.result)
-          $("#result").text(data.result + " est le resultat");
-      });
-    //
-  //
 
   //establish jQuery collections
   var $combiz = $("#combiz");
@@ -205,15 +171,15 @@ var com = function () {
 
   //call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
   if (verify(biz)) {
-    console.log("biz = true");
+  
     if (verify(flr)) {
-      console.log("flr = true");
+
       if (verify(bs)) {
-        console.log("bs = true");
+
         if (verify(spcs)) {
-          console.log("spcs = true");
+
           if (verify(cgs)) {
-            console.log("max = true");
+
             $("#labelcomquote").html(
               "Based on your input, your proposed building should need " +
                 plural(cgs, "elevator") +
@@ -267,21 +233,7 @@ var com = function () {
 
 var cor = function () {
   
-  //
-    //
-    $.post("localhost:3003/htmldata", {//Envoi des datas au serveur
-      cormax: $('#cormax').val(),
-      corflrs: $('#corflrs').val(),
-      corbs: $('#corbs').val()
-      },
-      function(data){//Callback function (data received from server)
-          console.log("Data recieved from server: " + data.result)
-          $("#result").text(data.result + " est le resultat");
-      });
-    //
-  //
-
-  //establish jQuery collections
+ //establish jQuery collections
   var $corbiz = $("#corbiz");
   var $corflrs = $("#corflrs");
   var $corbs = $("#corbs");
@@ -311,15 +263,15 @@ var cor = function () {
 
   //call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
   if (verify(biz)) {
-    console.log("biz = true");
+ 
     if (verify(flr)) {
-      console.log("flr = true");
+
       if (verify(bs)) {
-        console.log("bs = true");
+
         if (verify(spcs)) {
-          console.log("spcs = true");
+
           if (verify(max)) {
-            console.log("max = true");
+
             $("#labelcorquote").html(
               "Based on your input, your proposed building should need " +
                 plural(cgs, "elevator") +
@@ -372,20 +324,6 @@ var cor = function () {
 };
 
 var hyb = function () {
-  
-  //
-    //
-    $.post("localhost:3003/htmldata", {//Envoi des datas au serveur
-      hybmax: $('#hybmax').val(),
-      flrnum: $('#flrnum').val(),
-      bsnum: $('#bsnum').val()
-      },
-      function(data){//Callback function (data received from server)
-          console.log("Data recieved from server: " + data.result)
-          $("#result").text(data.result + " est le resultat");
-      });
-    //
-  //
 
   //establish jQuery collections
   var $hybbiz = $("#hybbiz");
@@ -418,17 +356,17 @@ var hyb = function () {
 
   //call input verification functions - if a variable passes. perform calculation and change label --> else --> change label
   if (verify(biz)) {
-    console.log("biz = true");
+
     if (verify(flr)) {
-      console.log("flr = true");
+
       if (verify(bs)) {
-        console.log("bs = true");
+
         if (verify(spcs)) {
-          console.log("spcs = true");
+
           if (verify(max)) {
-            console.log("max = true");
+
             if (verify(hrs) && hrs < 25) {
-              console.log("hrs = true");
+
               $("#labelhybquote").html(
                 "Based on your input, your proposed building should need " +
                   plural(cgs, "elevator") +
